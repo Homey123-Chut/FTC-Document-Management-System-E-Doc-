@@ -1,0 +1,29 @@
+
+{
+     "total_documents": [
+        {   
+            "id": 1,
+            "title": "ឯកសារសរុប",
+            "totalDocs": 124,
+            "type": "all"
+        },
+        {
+            "id": 2,
+            "title": "កំពុងរង់ចាំ",
+            "totalDocs": 32,
+            "type": "pending"
+        },
+        {
+            "id": 3,
+            "title": "បានអនុម័ត",
+            "totalDocs": 78,
+            "type": "approved"
+        },
+        {
+            "id": 4,
+            "title": "បានបដិសេធ",
+            "totalDocs": 10,
+            "type": "rejected"
+        }
+    ]
+}

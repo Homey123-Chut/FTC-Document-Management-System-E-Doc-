@@ -1,0 +1,40 @@
+{
+     "type_documents": [
+        {   
+            "id": 1,
+            "title": "ឯកសារផ្ទាល់ខ្លួន",
+            "totalDocs": 120,
+            "type": "personal"
+        },
+        {
+            "id": 2,
+            "title": "ឯកសារចូល",
+            "totalDocs": 30,
+            "type": "incoming"
+        },
+        {
+            "id": 3,
+            "title": "ឯកសារចេញ",
+            "totalDocs": 90,
+            "type": "outgoing"
+        },
+        {
+            "id": 4,
+            "title": "ឯកសារទូទៅ",
+            "totalDocs": 22,
+            "type": "general"
+        },
+        {
+            "id": 5,
+            "title": "បង្កើតលំហូរឯកសារ",
+            "totalDocs": 10,
+            "type": "workflow"
+        },
+        {
+            "id": 6,
+            "title": "បង្កើតអង្គភាព",
+            "totalDocs": 7,
+            "type": "department"
+        }
+    ]
+}

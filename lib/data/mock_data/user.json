@@ -1,0 +1,59 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "Homey Chut",
+      "email": "homey@gmail.com",
+      "password": "Hello@123",
+      "phoneNumber": "012345678",
+      "profileImg": "",
+      "gender": "male",
+      "role": "admin",
+      "department": "IT Department"
+    },
+    {
+      "id": "2",
+      "username": "Chut Holy",
+      "email": "holy@gmail.com",
+      "password": "Hello@123",
+      "phoneNumber": "098765432",
+      "profileImg": "",
+      "gender": "male",
+      "role": "staff",
+      "department": "Finance"
+    },
+    {
+      "id": "3",
+      "username": "Chhoeung Pinthong",
+      "email": "pinthong@gmail.com",
+      "password": "Hello@123",
+      "phoneNumber": "097123456",
+      "profileImg": "",
+      "gender": "female",
+      "role": "staff",
+      "department": "Finance"
+    },
+    {
+      "id": "4",
+      "username": "Sam Bandithviphou",
+      "email": "viphou@gmail.com",
+      "password": "Hello@123",
+      "phoneNumber": "096556677",
+      "profileImg": "",
+      "gender": "male",
+      "role": "staff",
+      "department": "Deputy head of Office"
+    },
+    {
+      "id": "5",
+      "username": "Sok Sopheak",
+      "email": "sopheak@gmail.com",
+      "password": "Hello@123",
+      "phoneNumber": "095556677",
+      "profileImg": "",
+      "gender": "male",
+      "role": "staff",
+      "department": "Deputy head of Office"
+    }
+  ]
+}
