@@ -37,6 +37,7 @@ dependencies:
   intl: ^0.20.2
   get: ^4.7.3
   device_preview: ^1.3.1
+  file_picker: ^8.0.0
 
 dev_dependencies:
   flutter_test:
@@ -68,6 +69,9 @@ flutter:
     - lib/data/mock_data/total_documents.json
     - lib/data/mock_data/type_documents.json
     - lib/data/mock_data/notifications.json
+    - lib/data/mock_data/folders.json
+    - lib/data/mock_data/approval_workflow.json 
+    - lib/data/mock_data/level_workflow.json 
 
   # To add assets to your application, add an assets section, like this:
   # assets:

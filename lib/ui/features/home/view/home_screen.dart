@@ -1,4 +1,7 @@
 import 'package:e_doc_redo/core/utils/async_value.dart';
+import 'package:e_doc_redo/data/models/document/document_type.dart';
+import 'package:e_doc_redo/ui/features/approval/views/workflow_approval_screen.dart';
+import 'package:e_doc_redo/ui/features/document/type_document_screen/view/document_type_screen.dart';
 import 'package:e_doc_redo/ui/features/home/controllers/total_document_controller.dart';
 import 'package:e_doc_redo/ui/features/home/controllers/type_document_controller.dart' as home_ctrl;
 import 'package:e_doc_redo/ui/features/home/view/widgets/home_content.dart';
@@ -22,7 +25,12 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void _navigateToDocuments(String type) {
-    Get.toNamed('/documents', arguments: {'type': type});
+    if (type == 'workflow') {
+      Get.to(() => const WorkflowApprovalScreen());
+      return;
+    }
+    final docType = DocumentTypeX.fromString(type);
+    Get.to(() => DocumentTypeScreen(type: docType));
   }
 
   @override

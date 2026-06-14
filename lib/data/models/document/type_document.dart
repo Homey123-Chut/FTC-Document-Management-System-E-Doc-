@@ -13,10 +13,10 @@ class TypeDocumentModel {
 
   factory TypeDocumentModel.fromJson(Map<String, dynamic> json) {
     return TypeDocumentModel(
-      id: json['id'] as int,
-      title: json['title'] as String,
-      totalDocs: json['totalDocs'] as int,
-      type: json['type'] as String,
+      id: json['id'] ?? 0,
+      title: json['title']?.toString() ?? '',
+      totalDocs: json['totalDocs'] ?? 0,
+      type: json['type']?.toString() ?? '',
     );
   }
 

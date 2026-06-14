@@ -1,47 +1,72 @@
-// import 'package:e_doc/ui/features/document/type_documents/ui/views/type_document_content.dart';
-// import 'package:flutter/material.dart';
-
-// import 'package:e_doc/ui/widgets/displays/top_nav_bar.dart';
-
-// class GeneralDocumentScreen extends StatelessWidget {
-// 	const GeneralDocumentScreen({super.key});
-
-// 	@override
-// 	Widget build(BuildContext context) {
-// 		return Scaffold(
-// 			backgroundColor: const Color(0xFFFAFAFA),
-// 			body: Column(
-// 				children: [
-// 					TopNavBarWidget(
-// 						title: 'ឯកសារទូទៅ',
-// 						onSearchTap: () {},
-// 					),
-// 					Expanded(
-// 						child: Padding(
-// 							padding: const EdgeInsets.only(top: 4.0),
-// 							child: GeneralDocumentContent(),
-// 						),
-// 					),
-// 				],
-// 			),
-// 		);
-// 	}
-// }
-
+import 'package:e_doc_redo/core/theme/theme.dart';
+import 'package:e_doc_redo/data/models/document/document_type.dart';
+import 'package:e_doc_redo/ui/features/document/type_document_screen/view/document_type_screen.dart';
+import 'package:e_doc_redo/ui/widgets/display/edoc_document_type_card.dart';
+import 'package:e_doc_redo/ui/widgets/display/edoc_top_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
+/// Entry screen showing 4 document-type cards in a 2×2 grid.
+/// Each card navigates to [DocumentTypeScreen] with the corresponding [DocumentType].
 class DocumentScreen extends StatelessWidget {
   const DocumentScreen({super.key});
+
+  static const _types = [
+    DocumentType.personal,
+    DocumentType.general,
+    DocumentType.incoming,
+    DocumentType.outgoing,
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF8FAFC),
-      appBar: AppBar(title: const Text('Document'), centerTitle: true),
-      body: const Center(
-        child: Text(
-          'Document Screen',
-          style: TextStyle(fontSize: 18, color: Colors.grey),
+      backgroundColor: AppColors.background,
+      body: SafeArea(
+        child: Column(
+          children: [
+            const TopBarWidget(),
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.all(16),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const SizedBox(height: 8),
+                    Text(
+                      'ប្រភេទឯកសារ',
+                      style: AppTextStyles.title2,
+                    ),
+                    const SizedBox(height: 16),
+                    Expanded(
+                      child: GridView.builder(
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 3,
+                          crossAxisSpacing: 12,
+                          mainAxisSpacing: 12,
+                          childAspectRatio: 0.85,
+                        ),
+                        itemCount: _types.length,
+                        itemBuilder: (context, index) {
+                          final type = _types[index];
+                          return EdocDocumentTypeCard(
+                            icon: type.icon,
+                            title: type.khmerTitle,
+                            count: 0,
+                            backgroundColor: type.color,
+                            onTap: () => Get.to(
+                              () => DocumentTypeScreen(type: type),
+                            ),
+                          );
+                        },
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );

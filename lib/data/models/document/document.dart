@@ -1,15 +1,14 @@
-
 class DocumentModel {
   final int id;
   final String titleKhmer;
-  final String titleLatin;            
-  final String documentNumber;  
-  final String date;          
-  final String status;                 
-  final String subject;          
-  final String program;          
-  final String documentHistory;  
-  final String attachedFile; 
+  final String titleLatin;
+  final String documentNumber;
+  final String date;
+  final String status;
+  final String subject;
+  final String program;
+  final String documentHistory;
+  final String attachedFile;
 
   const DocumentModel({
     required this.id,
@@ -26,16 +25,16 @@ class DocumentModel {
 
   factory DocumentModel.fromJson(Map<String, dynamic> json) {
     return DocumentModel(
-      id: json['id'] as int,
-      titleKhmer: json['titleKhmer'] as String,
-      titleLatin: json['titleLatin'] as String,
-      documentNumber: json['documentNumber'] as String,
-      date: json['date'] as String,
-      status: json['status'] as String,
-      subject: json['subject'] as String,
-      program: json['program'] as String,
-      documentHistory: json['documentHistory'] as String,
-      attachedFile: json['attachedFile'] as String,
+      id: json['id'] ?? 0,
+      titleKhmer: json['titleKhmer']?.toString() ?? '',
+      titleLatin: json['titleLatin']?.toString() ?? '',
+      documentNumber: json['documentNumber']?.toString() ?? '',
+      date: json['date']?.toString() ?? '',
+      status: json['status']?.toString() ?? '',
+      subject: json['subject']?.toString() ?? '',
+      program: json['program']?.toString() ?? '',
+      documentHistory: json['documentHistory']?.toString() ?? '',
+      attachedFile: json['attachedFile']?.toString() ?? '',
     );
   }
 
@@ -52,5 +51,31 @@ class DocumentModel {
       'documentHistory': documentHistory,
       'attachedFile': attachedFile,
     };
+  }
+
+  DocumentModel copyWith({
+    int? id,
+    String? titleKhmer,
+    String? titleLatin,
+    String? documentNumber,
+    String? date,
+    String? status,
+    String? subject,
+    String? program,
+    String? documentHistory,
+    String? attachedFile,
+  }) {
+    return DocumentModel(
+      id: id ?? this.id,
+      titleKhmer: titleKhmer ?? this.titleKhmer,
+      titleLatin: titleLatin ?? this.titleLatin,
+      documentNumber: documentNumber ?? this.documentNumber,
+      date: date ?? this.date,
+      status: status ?? this.status,
+      subject: subject ?? this.subject,
+      program: program ?? this.program,
+      documentHistory: documentHistory ?? this.documentHistory,
+      attachedFile: attachedFile ?? this.attachedFile,
+    );
   }
 }

@@ -1,0 +1,183 @@
+{
+  "workflows": [
+    {
+      "id": "WF001",
+      "workflowTitleKhmer": "លំហូរអនុម័តឯកសារចូល",
+      "workflowTitleLatin": "Incoming Document Approval",
+      "description": "Workflow for incoming documents",
+      "documentType": "incoming",
+      "totalDocuments": 5,
+      "totalLevels": 2,
+      "createdAt": "2026-06-12",
+      "steps": [
+        {"stepNumber": 1, "level": "Manager", "flowLevel": "Step 1"},
+        {"stepNumber": 2, "level": "Director", "flowLevel": "Step 2"}
+      ]
+    },
+    {
+      "id": "WF002",
+      "workflowTitleKhmer": "លំហូរឯកសារចេញ",
+      "workflowTitleLatin": "Outgoing Document Approval",
+      "description": "Workflow for outgoing documents",
+      "documentType": "outgoing",
+      "totalDocuments": 12,
+      "totalLevels": 3,
+      "createdAt": "2026-06-12",
+      "steps": [
+        {"stepNumber": 1, "level": "Officer", "flowLevel": "Step 1"},
+        {"stepNumber": 2, "level": "Manager", "flowLevel": "Step 2"},
+        {"stepNumber": 3, "level": "Director", "flowLevel": "Step 3"}
+      ]
+    },
+    {
+      "id": "WF003",
+      "workflowTitleKhmer": "លំហូរសំណើសុំច្បាប់",
+      "workflowTitleLatin": "Leave Request Approval",
+      "description": "Internal leave request process",
+      "documentType": "hr",
+      "totalDocuments": 2,
+      "totalLevels": 2,
+      "createdAt": "2026-06-12",
+      "steps": [
+        {"stepNumber": 1, "level": "Supervisor", "flowLevel": "Step 1"},
+        {"stepNumber": 2, "level": "HR Department", "flowLevel": "Step 2"}
+      ]
+    },
+    {
+      "id": "WF004",
+      "workflowTitleKhmer": "លំហូរការបញ្ជាទិញ",
+      "workflowTitleLatin": "Purchase Order Approval",
+      "description": "Procurement department workflow",
+      "documentType": "procurement",
+      "totalDocuments": 8,
+      "totalLevels": 4,
+      "createdAt": "2026-06-12",
+      "steps": [
+        {"stepNumber": 1, "level": "Requester", "flowLevel": "Step 1"},
+        {"stepNumber": 2, "level": "Manager", "flowLevel": "Step 2"},
+        {"stepNumber": 3, "level": "Finance", "flowLevel": "Step 3"},
+        {"stepNumber": 4, "level": "CEO", "flowLevel": "Step 4"}
+      ]
+    },
+    {
+      "id": "WF005",
+      "workflowTitleKhmer": "លំហូររាយការណ៍ប្រចាំខែ",
+      "workflowTitleLatin": "Monthly Report Review",
+      "description": "Process for departmental monthly reports",
+      "documentType": "internal",
+      "totalDocuments": 20,
+      "totalLevels": 3,
+      "createdAt": "2026-06-12",
+      "steps": [
+        {"stepNumber": 1, "level": "Analyst", "flowLevel": "Step 1"},
+        {"stepNumber": 2, "level": "Manager", "flowLevel": "Step 2"},
+        {"stepNumber": 3, "level": "Director", "flowLevel": "Step 3"}
+      ]
+    },
+    {
+      "id": "WF006",
+      "workflowTitleKhmer": "លំហូរចុះហត្ថលេខាលើកិច្ចសន្យា",
+      "workflowTitleLatin": "Contract Signing Process",
+      "description": "Legal and signing workflow",
+      "documentType": "contract",
+      "totalDocuments": 3,
+      "totalLevels": 4,
+      "createdAt": "2026-06-12",
+      "steps": [
+        {"stepNumber": 1, "level": "Legal", "flowLevel": "Step 1"},
+        {"stepNumber": 2, "level": "Department Head", "flowLevel": "Step 2"},
+        {"stepNumber": 3, "level": "Finance", "flowLevel": "Step 3"},
+        {"stepNumber": 4, "level": "CEO", "flowLevel": "Step 4"}
+      ]
+    },
+    {
+      "id": "WF007",
+      "workflowTitleKhmer": "លំហូរការអនុម័តថវិកា",
+      "workflowTitleLatin": "Budget Approval",
+      "description": "Budget allocation request workflow",
+      "documentType": "finance",
+      "totalDocuments": 1,
+      "totalLevels": 3,
+      "createdAt": "2026-06-12",
+      "steps": [
+        {"stepNumber": 1, "level": "Accountant", "flowLevel": "Step 1"},
+        {"stepNumber": 2, "level": "Finance Manager", "flowLevel": "Step 2"},
+        {"stepNumber": 3, "level": "CFO", "flowLevel": "Step 3"}
+      ]
+    },
+    {
+      "id": "WF008",
+      "workflowTitleKhmer": "លំហូរពិនិត្យគុណភាព",
+      "workflowTitleLatin": "Quality Control Review",
+      "description": "QC verification workflow",
+      "documentType": "operation",
+      "totalDocuments": 15,
+      "totalLevels": 2,
+      "createdAt": "2026-06-12",
+      "steps": [
+        {"stepNumber": 1, "level": "Technician", "flowLevel": "Step 1"},
+        {"stepNumber": 2, "level": "QC Manager", "flowLevel": "Step 2"}
+      ]
+    },
+    {
+      "id": "WF009",
+      "workflowTitleKhmer": "លំហូរការស្នើសុំកុំព្យូទ័រ",
+      "workflowTitleLatin": "IT Equipment Request",
+      "description": "IT hardware request process",
+      "documentType": "it",
+      "totalDocuments": 6,
+      "totalLevels": 3,
+      "createdAt": "2026-06-12",
+      "steps": [
+        {"stepNumber": 1, "level": "Employee", "flowLevel": "Step 1"},
+        {"stepNumber": 2, "level": "IT Manager", "flowLevel": "Step 2"},
+        {"stepNumber": 3, "level": "Operations", "flowLevel": "Step 3"}
+      ]
+    },
+    {
+      "id": "WF010",
+      "workflowTitleKhmer": "លំហូរការផ្សព្វផ្សាយ",
+      "workflowTitleLatin": "Marketing Campaign Review",
+      "description": "Content and campaign approval",
+      "documentType": "marketing",
+      "totalDocuments": 4,
+      "totalLevels": 4,
+      "createdAt": "2026-06-12",
+      "steps": [
+        {"stepNumber": 1, "level": "Content Creator", "flowLevel": "Step 1"},
+        {"stepNumber": 2, "level": "Social Media Lead", "flowLevel": "Step 2"},
+        {"stepNumber": 3, "level": "Marketing Manager", "flowLevel": "Step 3"},
+        {"stepNumber": 4, "level": "Director", "flowLevel": "Step 4"}
+      ]
+    },
+    {
+      "id": "WF011",
+      "workflowTitleKhmer": "លំហូររដ្ឋបាលទូទៅ",
+      "workflowTitleLatin": "General Admin Workflow",
+      "description": "General administrative document routing",
+      "documentType": "admin",
+      "totalDocuments": 30,
+      "totalLevels": 2,
+      "createdAt": "2026-06-12",
+      "steps": [
+        {"stepNumber": 1, "level": "Admin Officer", "flowLevel": "Step 1"},
+        {"stepNumber": 2, "level": "Admin Manager", "flowLevel": "Step 2"}
+      ]
+    },
+    {
+      "id": "WF012",
+      "workflowTitleKhmer": "លំហូរអភិវឌ្ឍន៍កម្មវិធី",
+      "workflowTitleLatin": "Software Dev Change Request",
+      "description": "Code review and deployment approval",
+      "documentType": "it",
+      "totalDocuments": 0,
+      "totalLevels": 3,
+      "createdAt": "2026-06-12",
+      "steps": [
+        {"stepNumber": 1, "level": "Developer", "flowLevel": "Step 1"},
+        {"stepNumber": 2, "level": "Tech Lead", "flowLevel": "Step 2"},
+        {"stepNumber": 3, "level": "CTO", "flowLevel": "Step 3"}
+      ]
+    }
+  ]
+}
