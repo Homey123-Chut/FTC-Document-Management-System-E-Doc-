@@ -31,6 +31,8 @@ dependencies:
   flutter:
     sdk: flutter
 
+  dropdown_search: ^7.0.0
+
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
@@ -71,7 +73,8 @@ flutter:
     - lib/data/mock_data/notifications.json
     - lib/data/mock_data/folders.json
     - lib/data/mock_data/approval_workflow.json 
-    - lib/data/mock_data/level_workflow.json 
+    - lib/data/mock_data/level_workflow.json
+    - lib/data/mock_data/outgoing_documents.json
 
   # To add assets to your application, add an assets section, like this:
   # assets:

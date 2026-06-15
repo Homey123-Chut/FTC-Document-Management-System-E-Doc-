@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 /// Step 2 of Send Document: select a workflow template.
-/// Visual design matches sent_document_step2_form.dart.
 class SendDocumentStep2Widget extends StatelessWidget {
   final SendDocumentController controller;
 
@@ -38,14 +37,29 @@ class SendDocumentStep2Widget extends StatelessWidget {
           ),
         ),
 
-        // ── Step Header ──
-        _buildStepHeader(),
-
-        const SizedBox(height: 24),
+        // ── Step Header (with White Background) ──
+        Container(
+          color: Colors.white,
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+          child: const SizedBox(
+            height: 50,
+            child: Row(
+              children: [
+                _StepArrow(text: 'ជំហានទី ១', color: Color(0xFFD3D8E0), textColor: Color(0xFF757575), isFirst: true),
+                _StepArrow(text: 'ជំហានទី ២', color: AppColors.darkBlue, textColor: Colors.white),
+                _StepArrow(text: 'ជំហានទី ៣', color: Color(0xFFD3D8E0), textColor: Color(0xFF757575), isLast: true),
+              ],
+            ),
+          ),
+        ),
 
         // ── Form Content ──
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
+          decoration: const BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.vertical(bottom: Radius.circular(16)),
+          ),
           child: Column(
             children: [
               Obx(() => DropdownField(
@@ -89,36 +103,39 @@ class SendDocumentStep2Widget extends StatelessWidget {
       ],
     );
   }
+}
 
-  Widget _buildStepHeader() {
-    return SizedBox(
-      height: 50,
-      child: Row(
-        children: [
-          _buildStepItem('ជំហានទី ១', const Color(0xFFE8EAF6),
-              const Color(0xFF757575),
-              isFirst: true),
-          _buildStepItem(
-              'ជំហានទី ២', AppColors.darkBlue, Colors.white),
-          _buildStepItem('ជំហានទី ៣', const Color(0xFFE8EAF6),
-              const Color(0xFF757575),
-              isLast: true),
-        ],
-      ),
-    );
-  }
+/// Arrow-shaped step indicator used in the step header.
+class _StepArrow extends StatelessWidget {
+  final String text;
+  final Color color;
+  final Color textColor;
+  final bool isFirst;
+  final bool isLast;
 
-  Widget _buildStepItem(String text, Color color, Color textColor,
-      {bool isFirst = false, bool isLast = false}) {
+  const _StepArrow({
+    required this.text,
+    required this.color,
+    required this.textColor,
+    this.isFirst = false,
+    this.isLast = false,
+  });
+
+  @override
+  Widget build(BuildContext context) {
     return Expanded(
       child: ClipPath(
         clipper: _ArrowClipper(isFirst: isFirst, isLast: isLast),
         child: Container(
           color: color,
           alignment: Alignment.center,
-          child: Text(text,
-              style:
-                  TextStyle(color: textColor, fontWeight: FontWeight.bold)),
+          child: Text(
+            text,
+            style: TextStyle(
+                color: textColor,
+                fontWeight: FontWeight.bold,
+                fontSize: 13),
+          ),
         ),
       ),
     );
@@ -128,19 +145,25 @@ class SendDocumentStep2Widget extends StatelessWidget {
 class _ArrowClipper extends CustomClipper<Path> {
   final bool isFirst;
   final bool isLast;
-  _ArrowClipper({required this.isFirst, required this.isLast});
+  const _ArrowClipper({required this.isFirst, required this.isLast});
 
   @override
   Path getClip(Size size) {
+    final double arrowWidth = 15.0;
+
     final path = Path();
-    path.moveTo(isFirst ? 0 : 15, 0);
-    path.lineTo(size.width - 15, 0);
+    path.moveTo(isFirst ? 0 : arrowWidth, 0);
+    path.lineTo(size.width - arrowWidth, 0);
     path.lineTo(size.width, size.height / 2);
-    path.lineTo(size.width - 15, size.height);
-    path.lineTo(isFirst ? 0 : 15, size.height);
+    path.lineTo(size.width - arrowWidth, size.height);
+    path.lineTo(isFirst ? 0 : arrowWidth, size.height);
+
     if (!isLast) {
-      path.lineTo(15 + (isFirst ? -15 : 0), size.height / 2);
+      path.lineTo(arrowWidth * 2, size.height / 2);
+    } else {
+      path.lineTo(0, size.height);
     }
+
     path.close();
     return path;
   }

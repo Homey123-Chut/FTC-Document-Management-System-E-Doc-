@@ -4,6 +4,7 @@ import 'package:e_doc_redo/controllers/user_controller.dart';
 import 'package:e_doc_redo/data/models/document/document_type.dart';
 import 'package:e_doc_redo/ui/features/document/outgoing_document/controllers/document_detail_controller.dart';
 import 'package:e_doc_redo/ui/features/document/outgoing_document/views/detail_document_screen.dart';
+import 'package:e_doc_redo/ui/features/document/incoming_document/views/detail_incoming_document_screen.dart';
 import 'package:e_doc_redo/ui/features/document/type_document_screen/view/document_screen.dart';
 import 'package:e_doc_redo/ui/features/document/type_document_screen/view/folder_screen.dart';
 import 'package:e_doc_redo/ui/features/home/view/home_screen.dart';
@@ -11,13 +12,12 @@ import 'package:e_doc_redo/ui/features/notification/controllers/notification_con
 import 'package:e_doc_redo/ui/features/notification/views/notification_screen.dart';
 import 'package:e_doc_redo/ui/features/user/controllers/profile_controller.dart';
 import 'package:e_doc_redo/ui/features/user/views/user_screen.dart';
+import 'package:e_doc_redo/ui/features/welcome/views/welcome_screen.dart';
 import 'package:e_doc_redo/ui/widgets/display/edoc_bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:e_doc_redo/ui/features/auth/login/services/auth_service.dart';
-
-
 void main() => runApp(
   DevicePreview(
     enabled: true,
@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
       builder: DevicePreview.appBuilder,
       title: 'E-Doc',
       debugShowCheckedModeBanner: false,
-      home: const MainScreen(),
+      home: const WelcomeScreen(),
       // Register routes so that Get.to() works in Flutter web
       // and browser URL restores don't cause "initial route" errors.
       getPages: [
@@ -66,10 +66,23 @@ class MyApp extends StatelessWidget {
             return const DetailDocumentScreen();
           },
         ),
+        GetPage(
+          name: '/DetailIncomingDocumentScreen',
+          page: () {
+            final documentId = Get.arguments?.toString();
+            if (documentId == null || documentId.isEmpty) {
+              return const MainScreen();
+            }
+            Get.delete<DocumentDetailController>();
+            final controller = Get.put(DocumentDetailController());
+            controller.loadDocument(documentId);
+            return const DetailIncomingDocumentScreen();
+          },
+        ),
       ],
       unknownRoute: GetPage(
         name: '/notfound',
-        page: () => const MainScreen(),
+        page: () => const WelcomeScreen(),
       ),
     );
   }

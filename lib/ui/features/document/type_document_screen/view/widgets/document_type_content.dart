@@ -195,25 +195,37 @@ class _DocumentTypeContentState extends State<DocumentTypeContent> {
                     final doc = displayed[index];
                     final isOutgoing =
                         widget.type == DocumentType.outgoing;
+                    final isIncoming =
+                        widget.type == DocumentType.incoming;
 
                     final card = ListCardDocument(
                       title: doc.titleKhmer,
                       docNumber: doc.documentNumber,
                       date: doc.date,
-                      // Only outgoing documents get a status badge
-                      status: isOutgoing ? doc.status : null,
+                      // Outgoing & incoming documents get a status badge
+                      status: (isOutgoing || isIncoming) ? doc.status : null,
                       // Outgoing: tap badge → open status picker bottom sheet
-                      onStatusChanged: isOutgoing
+                      onStatusChanged: (isOutgoing || isIncoming)
                           ? (_) => _showStatusPicker(doc)
                           : null,
                       // Other types: show the more_vert menu icon
-                      onMenuPressed: isOutgoing ? null : () {},
+                      onMenuPressed:
+                          (isOutgoing || isIncoming) ? null : () {},
                     );
 
-                    // Outgoing cards navigate to detail screen on tap
+                    // Outgoing cards → outgoing detail
+                    // Incoming cards → incoming detail (with approve/reject)
                     if (isOutgoing) {
                       return GestureDetector(
                         onTap: () => Get.toNamed('/DetailDocumentScreen',
+                            arguments: doc.id.toString()),
+                        child: card,
+                      );
+                    }
+                    if (isIncoming) {
+                      return GestureDetector(
+                        onTap: () => Get.toNamed(
+                            '/DetailIncomingDocumentScreen',
                             arguments: doc.id.toString()),
                         child: card,
                       );

@@ -11,10 +11,11 @@ import 'package:flutter/services.dart';
 class SendDocumentRepositoryImpl implements SendDocumentRepository {
   static const _assetPath = 'lib/data/mock_data/outgoing_documents.json';
 
-  static List<OutgoingDocumentModel>? _cachedDocs;
+  // ignore: non_constant_identifier_names
+  static List<OutgoingDocumentModel>? cachedDocs;
 
   Future<List<OutgoingDocumentModel>> _loadAll() async {
-    if (_cachedDocs != null) return _cachedDocs!;
+    if (cachedDocs != null) return cachedDocs!;
 
     final jsonString = await rootBundle.loadString(_assetPath);
     final decoded = jsonDecode(jsonString);
@@ -34,8 +35,8 @@ class SendDocumentRepositoryImpl implements SendDocumentRepository {
           _toStringKeyMap(item as Map)));
     }
 
-    _cachedDocs = docs;
-    return _cachedDocs!;
+    cachedDocs = docs;
+    return cachedDocs!;
   }
 
   static Map<String, dynamic> _toStringKeyMap(Map map) {
@@ -53,7 +54,7 @@ class SendDocumentRepositoryImpl implements SendDocumentRepository {
     await Future.delayed(const Duration(milliseconds: 300));
     final all = await _loadAll();
     all.add(doc);
-    _cachedDocs = all;
+    cachedDocs = all;
   }
 
   @override

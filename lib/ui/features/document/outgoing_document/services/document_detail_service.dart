@@ -30,6 +30,31 @@ class DocumentDetailService {
     final user = await detailRepo.getUserById(doc.createdBy);
     final creatorName = user?.username ?? 'មិនស្គាល់';
     final creatorDepartment = user?.department ?? '';
+    final creatorProfileImg = user?.profileImg ?? '';
+    final creatorRole = user?.role ?? '';
+
+    // Determine receiver from first approval step (if any)
+    String receiverName = '';
+    String receiverDepartment = '';
+    String receiverRole = '';
+    if (doc.workflowSteps.isNotEmpty) {
+      final firstStep = doc.workflowSteps.first;
+      receiverName = firstStep.level;
+      receiverDepartment = firstStep.flowLevel;
+      receiverRole = '';
+    }
+
+    // Fetch workflow description
+    String workflowDescription = '';
+    try {
+      final workflows = await detailRepo.getWorkflows();
+      for (final wf in workflows) {
+        if (wf.id == doc.workflowTemplateId) {
+          workflowDescription = wf.description;
+          break;
+        }
+      }
+    } catch (_) {}
 
     // Build attached files list (split by comma if multiple)
     final attachedFiles = doc.attachedFile.isNotEmpty
@@ -40,10 +65,16 @@ class DocumentDetailService {
       document: doc,
       creatorName: creatorName,
       creatorDepartment: creatorDepartment,
+      creatorProfileImg: creatorProfileImg,
+      creatorRole: creatorRole,
       attachedFiles: attachedFiles,
       approvalSteps: doc.workflowSteps,
       workflowName: doc.workflowTemplateName,
       totalSteps: doc.totalSteps,
+      workflowDescription: workflowDescription,
+      receiverName: receiverName.isNotEmpty ? receiverName : (doc.workflowSteps.isNotEmpty ? doc.workflowSteps.first.level : ''),
+      receiverDepartment: receiverDepartment.isNotEmpty ? receiverDepartment : (doc.workflowSteps.isNotEmpty ? doc.workflowSteps.first.flowLevel : ''),
+      receiverRole: receiverRole,
     );
   }
 }

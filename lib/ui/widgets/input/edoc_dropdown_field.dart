@@ -1,10 +1,12 @@
 
+
+
 import '../../../core/theme/theme.dart';
 import 'package:flutter/material.dart';
 
 class DropdownField extends StatelessWidget {
   final String label;
-  final String value;
+  final String? value; // Changed to String? to support null/unselected
   final List<String> items;
   final ValueChanged<String?> onChanged;
   final String? dropdownLabel;
@@ -21,14 +23,20 @@ class DropdownField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<DropdownMenuItem<String>> menuItems = [
+      // ADDED HEADER ITEM
+      const DropdownMenuItem<String>(
+        value: "header_dummy",
+        enabled: false,
+        child: Text(
+          "គោលដៅ",
+          style: TextStyle(fontWeight: FontWeight.bold, color: AppColors.darkBlue),
+        ),
+      ),
       if (dropdownLabel != null)
         DropdownMenuItem<String>(
-          value: dropdownLabel, 
+          value: dropdownLabel,
           enabled: false,
-          child: Text(
-            dropdownLabel!,
-            style: AppTextStyles.label2,
-          ),
+          child: Text(dropdownLabel!, style: AppTextStyles.label2),
         ),
       ...items.map((String item) {
         final bool isSelected = item == value;
@@ -45,15 +53,10 @@ class DropdownField extends StatelessWidget {
                   border: Border.all(color: isSelected ? AppColors.darkBlue : AppColors.grey),
                   color: isSelected ? AppColors.darkBlue : Colors.transparent,
                 ),
-                child: isSelected? const Icon(Icons.check, size: 14, color: Colors.white) : null,
+                child: isSelected ? const Icon(Icons.check, size: 14, color: Colors.white) : null,
               ),
               const SizedBox(width: 16),
-              Expanded(
-                child: Text(
-                  item,
-                  style: AppTextStyles.label2,
-                ),
-              ),
+              Expanded(child: Text(item, style: AppTextStyles.label2)),
             ],
           ),
         );
@@ -63,44 +66,30 @@ class DropdownField extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          label,
-          style: AppTextStyles.label2,
-        ),
+        Text(label, style: AppTextStyles.label2),
         const SizedBox(height: 18),
         DropdownButtonFormField<String>(
           isExpanded: true,
-          initialValue: items.contains(value) ? value : null,
+          value: (items.contains(value)) ? value : null, // USE 'value' NOT 'initialValue'
           icon: const Padding(
             padding: EdgeInsets.only(right: 12),
-            child: Icon(
-              Icons.keyboard_arrow_down, 
-              color: AppColors.grey
-            ),
+            child: Icon(Icons.keyboard_arrow_down, color: AppColors.grey),
           ),
           decoration: InputDecoration(
             contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-            enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(14),
-              borderSide: const BorderSide(color: AppColors.grey, width: 1),
-            ),
-            focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(14),
-              borderSide: const BorderSide(color: AppColors.darkBlue, width: 1.5),
-            ),
+            enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(14), borderSide: const BorderSide(color: AppColors.grey)),
+            focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(14), borderSide: const BorderSide(color: AppColors.darkBlue, width: 1.5)),
           ),
-          items: menuItems, 
+          items: menuItems,
           onChanged: onChanged,
           dropdownColor: Colors.white,
           borderRadius: BorderRadius.circular(14),
           selectedItemBuilder: (BuildContext context) {
             return menuItems.map<Widget>((DropdownMenuItem<String> menuItem) {
-              final String itemText = menuItem.value ?? '';
-              
               return Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  itemText,
+                  menuItem.value == "header_dummy" ? "" : (menuItem.value ?? ''),
                   style: AppTextStyles.label2,
                   overflow: TextOverflow.ellipsis,
                 ),

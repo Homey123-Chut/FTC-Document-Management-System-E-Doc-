@@ -3,7 +3,9 @@
 import 'dart:convert';
 
 import 'package:e_doc_redo/data/models/document/document.dart';
+import 'package:e_doc_redo/data/models/document/outgoing_document_model.dart';
 import 'package:e_doc_redo/data/repositories/document/document_repository.dart';
+import 'package:e_doc_redo/ui/features/document/outgoing_document/repositories_impl/send_document_repository_impl.dart';
 import 'package:flutter/services.dart';
 
 /// Local mock implementation of [DocumentRepository].
@@ -60,8 +62,66 @@ class DocumentRepositoryImpl implements DocumentRepository {
   @override
   Future<List<DocumentModel>> getDocumentsByType(String type) async {
     await Future.delayed(const Duration(milliseconds: 300));
+
+    // For 'incoming' type: return approval workflow documents that need review.
+    // These come from outgoing_documents.json (shared cache).
+    if (type == 'incoming') {
+      return _loadIncomingApprovalDocs();
+    }
+
     final all = await _loadAll();
     return List<DocumentModel>.from(all[type] ?? <DocumentModel>[]);
+  }
+
+  /// Loads outgoing documents from the shared cache (or JSON fallback)
+  /// and converts them to [DocumentModel] for the incoming document list.
+  Future<List<DocumentModel>> _loadIncomingApprovalDocs() async {
+    try {
+      // Try shared in-memory cache first (reflects live approve/reject)
+      final cache = SendDocumentRepositoryImpl.cachedDocs;
+      if (cache != null && cache.isNotEmpty) {
+        return cache.map((d) => _outgoingToDocumentModel(d)).toList();
+      }
+
+      // Fallback: load from JSON
+      final jsonString = await rootBundle
+          .loadString('lib/data/mock_data/outgoing_documents.json');
+      final decoded = jsonDecode(jsonString);
+      if (decoded is! List) return [];
+      return decoded.whereType<Map>().map((item) {
+        final map = item.map((k, v) => MapEntry(k.toString(), v));
+        return DocumentModel(
+          id: int.tryParse(map['id']?.toString() ?? '') ??
+              (map['sourceDocumentId'] ?? 0),
+          titleKhmer: map['titleKhmer']?.toString() ?? '',
+          titleLatin: map['titleLatin']?.toString() ?? '',
+          documentNumber: map['documentNumber']?.toString() ?? '',
+          date: map['date']?.toString() ?? '',
+          status: map['status']?.toString() ?? 'កំពុងរង់ចាំ',
+          subject: map['subject']?.toString() ?? '',
+          program: map['program']?.toString() ?? '',
+          documentHistory: 'បានបញ្ជូន',
+          attachedFile: map['attachedFile']?.toString() ?? '',
+        );
+      }).toList();
+    } catch (_) {
+      return [];
+    }
+  }
+
+  DocumentModel _outgoingToDocumentModel(OutgoingDocumentModel d) {
+    return DocumentModel(
+      id: int.tryParse(d.id) ?? d.sourceDocumentId,
+      titleKhmer: d.titleKhmer,
+      titleLatin: d.titleLatin,
+      documentNumber: d.documentNumber,
+      date: d.date,
+      status: d.status,
+      subject: d.subject,
+      program: d.program,
+      documentHistory: 'បានបញ្ជូន',
+      attachedFile: d.attachedFile,
+    );
   }
 
   @override

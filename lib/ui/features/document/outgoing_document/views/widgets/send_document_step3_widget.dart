@@ -1,4 +1,5 @@
 import 'package:e_doc_redo/core/theme/theme.dart';
+import 'package:e_doc_redo/ui/features/auth/login/services/auth_service.dart';
 import 'package:e_doc_redo/ui/features/document/outgoing_document/controllers/send_document_controller.dart';
 import 'package:e_doc_redo/ui/widgets/action/edoc_button.dart';
 import 'package:flutter/material.dart';
@@ -103,11 +104,14 @@ class SendDocumentStep3Widget extends StatelessWidget {
                       const SizedBox(height: 20),
                     ],
 
-                    // ── Metadata ──
-                    _buildMetadata(
-                        doc.subject.isNotEmpty ? doc.subject : 'កិច្ចការ',
-                        'កិច្ចការ',
-                        Icons.description_outlined),
+                    // ── Subject (full paragraph, no icon) ──
+                    const Text('កិច្ចការ',
+                        style: TextStyle(fontWeight: FontWeight.bold)),
+                    const SizedBox(height: 4),
+                    Text(
+                      doc.subject.isNotEmpty ? doc.subject : 'កិច្ចការ',
+                      style: const TextStyle(fontSize: 14, color: AppColors.grey),
+                    ),
                     const SizedBox(height: 16),
                     Row(
                       children: [
@@ -120,10 +124,17 @@ class SendDocumentStep3Widget extends StatelessWidget {
                               Icons.account_balance_outlined),
                         ),
                         Expanded(
-                          child: _buildMetadata(
-                              'បង្កើតដោយ',
-                              'អ្នកប្រើប្រាស់',
-                              Icons.person_outline),
+                          child: (() {
+                            String userName = 'អ្នកបង្កើត';
+                            try {
+                              final auth = Get.find<AuthService>();
+                              userName = auth.currentUser?.username ?? 'អ្នកបង្កើត';
+                            } catch (_) {}
+                            return _buildMetadata(
+                                userName,
+                                'បង្កើតដោយ',
+                                Icons.person_outline);
+                          })(),
                         ),
                       ],
                     ),
@@ -238,35 +249,81 @@ class SendDocumentStep3Widget extends StatelessWidget {
     );
   }
 
-  Widget _buildFlowLine(List steps) {
+
+Widget _buildFlowLine(List steps) {
+    const double circleSize = 52;
+    const double lineWidth = 40;
+    const double lineThickness = 3;
+
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
-      child: Row(
-        children: [
-          for (int i = 0; i < steps.length; i++) ...[
-            if (i > 0)
-              Container(
-                height: 2,
-                width: 30,
-                color: AppColors.darkBlue,
-              ),
-            Column(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 12),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            // ── Top row: circles connected by lines, flush — no gaps ──
+            Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                CircleAvatar(
-                  backgroundColor: AppColors.darkBlue,
-                  child: Text('${i + 1}',
-                      style: const TextStyle(color: Colors.white)),
-                ),
-                const SizedBox(height: 4),
-                Text(
-                  steps[i].level,
-                  style: const TextStyle(fontSize: 12, color: AppColors.darkBlue, fontWeight: FontWeight.w500),
-                ),
+                for (int i = 0; i < steps.length; i++) ...[
+                  Container(
+                    width: circleSize,
+                    height: circleSize,
+                    decoration: const BoxDecoration(
+                      color: Color(0xFF4F46E5),
+                      shape: BoxShape.circle,
+                    ),
+                    alignment: Alignment.center,
+                    child: Text(
+                      '${i + 1}',
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                      ),
+                    ),
+                  ),
+                  if (i < steps.length - 1)
+                    Container(
+                      height: lineThickness,
+                      width: lineWidth,
+                      color: Color(0xFF4F46E5),
+                    ),
+                ],
               ],
             ),
+            const SizedBox(height: 8),
+            // ── Bottom row: labels centered under each circle ──
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              children: steps.asMap().entries.map((entry) {
+                final i = entry.key;
+                final isLast = i == steps.length - 1;
+                return SizedBox(
+                  width: circleSize + (isLast ? 0 : lineWidth),
+                  child: Align(
+                    alignment: Alignment.centerLeft,
+                    child: SizedBox(
+                      width: circleSize,
+                      child: Text(
+                        entry.value.level,
+                        textAlign: TextAlign.center,
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        style: const TextStyle(
+                          fontSize: 11,
+                          color: Color(0xFF333333),
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ),
+                  ),
+                );
+              }).toList(),
+            ),
           ],
-        ],
+        ),
       ),
     );
   }

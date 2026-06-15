@@ -7,19 +7,32 @@ class DetailDocumentModel {
   final OutgoingDocumentModel document;
   final String creatorName;
   final String creatorDepartment;
+  final String creatorProfileImg;
+  final String creatorRole;
   final List<String> attachedFiles;
   final List<ApprovalStepModel> approvalSteps;
   final String workflowName;
   final int totalSteps;
+  final String workflowDescription;
+  /// The first receiver/approver name from the workflow steps
+  final String receiverName;
+  final String receiverDepartment;
+  final String receiverRole;
 
   const DetailDocumentModel({
     required this.document,
     required this.creatorName,
     required this.creatorDepartment,
+    required this.creatorProfileImg,
+    required this.creatorRole,
     required this.attachedFiles,
     required this.approvalSteps,
     required this.workflowName,
     required this.totalSteps,
+    required this.workflowDescription,
+    required this.receiverName,
+    required this.receiverDepartment,
+    required this.receiverRole,
   });
 
   factory DetailDocumentModel.fromJson(Map<String, dynamic> json) {
@@ -70,10 +83,16 @@ class DetailDocumentModel {
       document: document,
       creatorName: json['creatorName']?.toString() ?? '',
       creatorDepartment: json['creatorDepartment']?.toString() ?? '',
+      creatorProfileImg: json['creatorProfileImg']?.toString() ?? '',
+      creatorRole: json['creatorRole']?.toString() ?? '',
       attachedFiles: attachedFiles.cast<String>(),
       approvalSteps: approvalSteps.cast<ApprovalStepModel>(),
       workflowName: json['workflowName']?.toString() ?? '',
       totalSteps: json['totalSteps'] ?? 0,
+      workflowDescription: json['workflowDescription']?.toString() ?? '',
+      receiverName: json['receiverName']?.toString() ?? '',
+      receiverDepartment: json['receiverDepartment']?.toString() ?? '',
+      receiverRole: json['receiverRole']?.toString() ?? '',
     );
   }
 }
