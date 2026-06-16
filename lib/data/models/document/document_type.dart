@@ -5,13 +5,11 @@ enum DocumentType { personal, general, incoming, outgoing }
 
 // ─── Document Status Enum ────────────────────────────────────────────────────
 
-enum DocumentStatus { draft, pending, approved, rejected }
+enum DocumentStatus { pending, approved, rejected }
 
 extension DocumentStatusX on DocumentStatus {
   String get khmerTitle {
     switch (this) {
-      case DocumentStatus.draft:
-        return 'សេចក្តីព្រាង';
       case DocumentStatus.pending:
         return 'កំពុងរងចាំ';
       case DocumentStatus.approved:
@@ -23,8 +21,6 @@ extension DocumentStatusX on DocumentStatus {
 
   IconData get icon {
     switch (this) {
-      case DocumentStatus.draft:
-        return Icons.edit_note;
       case DocumentStatus.pending:
         return Icons.schedule;
       case DocumentStatus.approved:
@@ -37,12 +33,6 @@ extension DocumentStatusX on DocumentStatus {
   /// Returns [bg, text, icon] color map for the status badge.
   Map<String, Color> get colors {
     switch (this) {
-      case DocumentStatus.draft:
-        return {
-          'bg': Colors.grey.shade100,
-          'text': Colors.grey.shade700,
-          'icon': Colors.grey,
-        };
       case DocumentStatus.pending:
         return {
           'bg': const Color(0xFFFFFBEB),
@@ -69,9 +59,6 @@ extension DocumentStatusX on DocumentStatus {
   static DocumentStatus fromString(String? status) {
     if (status == null) return DocumentStatus.pending;
     switch (status.toLowerCase()) {
-      case 'draft':
-      case 'សេចក្តីព្រាង':
-        return DocumentStatus.draft;
       case 'pending':
       case 'កំពុងរងចាំ':
       case 'កំពុងរង់ចាំ': // support both spellings
@@ -85,6 +72,80 @@ extension DocumentStatusX on DocumentStatus {
         return DocumentStatus.rejected;
       default:
         return DocumentStatus.pending;
+    }
+  }
+}
+
+// ─── Approval Status Enum (step-level) ────────────────────────────────────────
+
+enum ApprovalStatus { pending, approved, rejected }
+
+extension ApprovalStatusX on ApprovalStatus {
+  String get khmerTitle {
+    switch (this) {
+      case ApprovalStatus.pending:
+        return 'កំពុងរងចាំ';
+      case ApprovalStatus.approved:
+        return 'អនុម័ត';
+      case ApprovalStatus.rejected:
+        return 'បដិសេធ';
+    }
+  }
+
+  IconData get icon {
+    switch (this) {
+      case ApprovalStatus.pending:
+        return Icons.schedule;
+      case ApprovalStatus.approved:
+        return Icons.check_circle;
+      case ApprovalStatus.rejected:
+        return Icons.cancel;
+    }
+  }
+
+  Map<String, Color> get colors {
+    switch (this) {
+      case ApprovalStatus.pending:
+        return {
+          'bg': const Color(0xFFFFFBEB),
+          'text': const Color(0xFFD97706),
+          'icon': const Color(0xFFF59E0B),
+        };
+      case ApprovalStatus.approved:
+        return {
+          'bg': const Color(0xFFECFDF5),
+          'text': const Color(0xFF059669),
+          'icon': const Color(0xFF10B981),
+        };
+      case ApprovalStatus.rejected:
+        return {
+          'bg': const Color(0xFFFEF2F2),
+          'text': const Color(0xFFDC2626),
+          'icon': const Color(0xFFEF4444),
+        };
+    }
+  }
+
+  bool get isPending => this == ApprovalStatus.pending;
+  bool get isApproved => this == ApprovalStatus.approved;
+  bool get isRejected => this == ApprovalStatus.rejected;
+
+  static ApprovalStatus fromString(String? status) {
+    if (status == null) return ApprovalStatus.pending;
+    switch (status.toLowerCase()) {
+      case 'pending':
+      case 'កំពុងរងចាំ':
+      case 'កំពុងរង់ចាំ':
+        return ApprovalStatus.pending;
+      case 'approved':
+      case 'អនុម័ត':
+      case 'បានអនុម័ត':
+        return ApprovalStatus.approved;
+      case 'rejected':
+      case 'បដិសេធ':
+        return ApprovalStatus.rejected;
+      default:
+        return ApprovalStatus.pending;
     }
   }
 }

@@ -1,15 +1,17 @@
+import 'package:e_doc_redo/data/models/document/document_type.dart';
+
 class ApprovalStepModel {
   final int stepNumber;
   final String level;
   final String flowLevel;
-  final String status; // "pending" | "approved" | "rejected"
+  final ApprovalStatus status;
   final String? actionDate;
 
   const ApprovalStepModel({
     required this.stepNumber,
     required this.level,
     required this.flowLevel,
-    this.status = 'pending',
+    this.status = ApprovalStatus.pending,
     this.actionDate,
   });
 
@@ -18,7 +20,7 @@ class ApprovalStepModel {
       stepNumber: json['stepNumber'] ?? 0,
       level: json['level']?.toString() ?? '',
       flowLevel: json['flowLevel']?.toString() ?? '',
-      status: json['status']?.toString() ?? 'pending',
+      status: ApprovalStatusX.fromString(json['status']?.toString()),
       actionDate: json['actionDate']?.toString(),
     );
   }
@@ -28,7 +30,7 @@ class ApprovalStepModel {
       'stepNumber': stepNumber,
       'level': level,
       'flowLevel': flowLevel,
-      'status': status,
+      'status': status.name,
       'actionDate': actionDate,
     };
   }
@@ -37,7 +39,7 @@ class ApprovalStepModel {
     int? stepNumber,
     String? level,
     String? flowLevel,
-    String? status,
+    ApprovalStatus? status,
     String? actionDate,
   }) {
     return ApprovalStepModel(
@@ -49,7 +51,7 @@ class ApprovalStepModel {
     );
   }
 
-  bool get isPending => status == 'pending';
-  bool get isApproved => status == 'approved';
-  bool get isRejected => status == 'rejected';
+  bool get isPending => status == ApprovalStatus.pending;
+  bool get isApproved => status == ApprovalStatus.approved;
+  bool get isRejected => status == ApprovalStatus.rejected;
 }

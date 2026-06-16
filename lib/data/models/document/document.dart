@@ -9,6 +9,13 @@ class DocumentModel {
   final String program;
   final String documentHistory;
   final String attachedFile;
+  final int? folderId;
+  final int? typeDocumentId;
+  final String? workflowId;
+  final String? createdBy;
+  final String? createdDate;
+  final String? workflowCode;
+  final String? documentFlow;
 
   const DocumentModel({
     required this.id,
@@ -21,6 +28,13 @@ class DocumentModel {
     required this.program,
     required this.documentHistory,
     required this.attachedFile,
+    this.folderId,
+    this.typeDocumentId,
+    this.workflowId,
+    this.createdBy,
+    this.createdDate,
+    this.workflowCode,
+    this.documentFlow,
   });
 
   factory DocumentModel.fromJson(Map<String, dynamic> json) {
@@ -35,6 +49,13 @@ class DocumentModel {
       program: json['program']?.toString() ?? '',
       documentHistory: json['documentHistory']?.toString() ?? '',
       attachedFile: json['attachedFile']?.toString() ?? '',
+      folderId: json['folderId'],
+      typeDocumentId: json['typeDocumentId'],
+      workflowId: json['workflowId']?.toString(),
+      createdBy: json['createdBy']?.toString(),
+      createdDate: json['createdDate']?.toString(),
+      workflowCode: json['workflowCode']?.toString(),
+      documentFlow: json['documentFlow']?.toString(),
     );
   }
 
@@ -50,6 +71,13 @@ class DocumentModel {
       'program': program,
       'documentHistory': documentHistory,
       'attachedFile': attachedFile,
+      'folderId': folderId,
+      'typeDocumentId': typeDocumentId,
+      'workflowId': workflowId,
+      'createdBy': createdBy,
+      'createdDate': createdDate,
+      'workflowCode': workflowCode,
+      'documentFlow': documentFlow,
     };
   }
 
@@ -64,6 +92,13 @@ class DocumentModel {
     String? program,
     String? documentHistory,
     String? attachedFile,
+    int? folderId,
+    int? typeDocumentId,
+    String? workflowId,
+    String? createdBy,
+    String? createdDate,
+    String? workflowCode,
+    String? documentFlow,
   }) {
     return DocumentModel(
       id: id ?? this.id,
@@ -76,6 +111,13 @@ class DocumentModel {
       program: program ?? this.program,
       documentHistory: documentHistory ?? this.documentHistory,
       attachedFile: attachedFile ?? this.attachedFile,
+      folderId: folderId ?? this.folderId,
+      typeDocumentId: typeDocumentId ?? this.typeDocumentId,
+      workflowId: workflowId ?? this.workflowId,
+      createdBy: createdBy ?? this.createdBy,
+      createdDate: createdDate ?? this.createdDate,
+      workflowCode: workflowCode ?? this.workflowCode,
+      documentFlow: documentFlow ?? this.documentFlow,
     );
   }
 }

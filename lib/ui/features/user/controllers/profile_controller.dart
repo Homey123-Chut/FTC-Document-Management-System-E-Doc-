@@ -1,6 +1,6 @@
-import 'package:e_doc_redo/data/repositories_impl/mock_user_repository.dart';
+﻿import 'package:e_doc_redo/ui/features/user/repository_impl/user_repository_impl.dart';
 import 'package:e_doc_redo/data/models/user/user.dart';
-import 'package:e_doc_redo/ui/features/auth/login/services/auth_service.dart';
+import 'package:e_doc_redo/controllers/auth_service.dart';
 import 'package:e_doc_redo/ui/features/user/services/profile_service.dart';
 import 'package:get/get.dart';
 

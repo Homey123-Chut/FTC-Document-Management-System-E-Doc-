@@ -1,9 +1,9 @@
-import 'package:e_doc_redo/core/theme/theme.dart';
+﻿import 'package:e_doc_redo/core/theme/theme.dart';
 import 'package:e_doc_redo/data/models/approval_workflow/approval_step.dart';
 import 'package:e_doc_redo/data/models/approval_workflow/approval_workflow.dart';
 import 'package:e_doc_redo/ui/features/approval/controllers/workflow_approval_controller.dart';
-import 'package:e_doc_redo/ui/widgets/action/edoc_button.dart';
-import 'package:e_doc_redo/ui/widgets/input/edoc_input_field.dart';
+import 'package:e_doc_redo/ui/widgets/buttons/edoc_button.dart';
+import 'package:e_doc_redo/ui/widgets/inputs/edoc_input_field.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -115,11 +115,18 @@ class _ApprovalWorkflowStep2FormState extends State<ApprovalWorkflowStep2Form> {
                 Row(
                   children: [
                     Expanded(
-                      child: ButtonWidget(
-                        text: "បោះបង់",
-                        backgroundColor: const Color(0xFFF5F5F5),
-                        foregroundColor: Colors.black,
-                        onPressed: widget.onBack,
+                      child: SizedBox(
+                        height: 50,
+                        child: OutlinedButton(
+                          onPressed: widget.onBack,
+                          style: OutlinedButton.styleFrom(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(14)),
+                            side: const BorderSide(color: AppColors.grey),
+                          ),
+                          child: const Text('បោះបង់',
+                              style: TextStyle(color: AppColors.grey)),
+                        ),
                       ),
                     ),
                     const SizedBox(width: 16),

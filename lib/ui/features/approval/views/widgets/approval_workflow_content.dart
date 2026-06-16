@@ -1,7 +1,7 @@
-// import 'package:e_doc_redo/ui/features/approval/controllers/workflow_approval_controller.dart';
-// import 'package:e_doc_redo/ui/features/approval/views/widgets/approval_workflow_card.dart';
-// import 'package:e_doc_redo/ui/features/approval/views/widgets/forms/workflow_create_dialog.dart';
-// import 'package:e_doc_redo/ui/widgets/action/edoc_button.dart';
+﻿// import 'package:e_doc_redo/ui/features/approval/controllers/workflow_approval_controller.dart';
+// import 'package:e_doc_redo/ui/features/approval/screens/widgets/approval_workflow_card.dart';
+// import 'package:e_doc_redo/ui/features/approval/screens/widgets/forms/workflow_create_dialog.dart';
+// import 'package:e_doc_redo/ui/widgets/buttons/edoc_button.dart';
 // import 'package:flutter/material.dart';
 // import 'package:get/get.dart';
 
@@ -201,7 +201,7 @@
 import 'package:e_doc_redo/ui/features/approval/controllers/workflow_approval_controller.dart';
 import 'package:e_doc_redo/ui/features/approval/views/widgets/approval_workflow_card.dart';
 import 'package:e_doc_redo/ui/features/approval/views/widgets/forms/workflow_create_dialog.dart';
-import 'package:e_doc_redo/ui/widgets/action/edoc_button.dart';
+import 'package:e_doc_redo/ui/widgets/buttons/edoc_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

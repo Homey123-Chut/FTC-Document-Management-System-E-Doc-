@@ -3,7 +3,7 @@ import 'package:e_doc_redo/data/models/approval_workflow/approval_step.dart';
 /// Model for a sent/outgoing document that references a source document
 /// and a selected workflow template with its approval steps.
 class OutgoingDocumentModel {
-  final String id;
+  final int id;
   final int sourceDocumentId;
   final String documentNumber;
   final String titleKhmer;
@@ -52,7 +52,7 @@ class OutgoingDocumentModel {
     }
 
     return OutgoingDocumentModel(
-      id: json['id']?.toString() ?? '',
+      id: json['id'] ?? 0,
       sourceDocumentId: json['sourceDocumentId'] ?? 0,
       documentNumber: json['documentNumber']?.toString() ?? '',
       titleKhmer: json['titleKhmer']?.toString() ?? '',
@@ -97,7 +97,7 @@ class OutgoingDocumentModel {
   }
 
   OutgoingDocumentModel copyWith({
-    String? id,
+    int? id,
     int? sourceDocumentId,
     String? documentNumber,
     String? titleKhmer,

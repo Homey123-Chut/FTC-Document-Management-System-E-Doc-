@@ -1,12 +1,12 @@
-import 'package:e_doc_redo/core/theme/theme.dart';
+﻿import 'package:e_doc_redo/core/theme/theme.dart';
 import 'package:e_doc_redo/ui/features/approval/controllers/level_workflow_controller.dart';
 import 'package:e_doc_redo/ui/features/approval/controllers/workflow_approval_controller.dart';
-import 'package:e_doc_redo/ui/features/approval/repositories_impl/workflow_approval_repository_impl.dart';
-import 'package:e_doc_redo/ui/features/approval/repositories_impl/workflow_level_repository_impl.dart';
+import 'package:e_doc_redo/ui/features/approval/repository_impl/workflow_approval_repository_impl.dart';
+import 'package:e_doc_redo/ui/features/approval/repository_impl/level_workflow_repository_impl.dart';
 import 'package:e_doc_redo/ui/features/approval/services/level_workflow_service.dart';
 import 'package:e_doc_redo/ui/features/approval/services/workflow_approval_service.dart';
 import 'package:e_doc_redo/ui/features/approval/views/widgets/approval_workflow_content.dart';
-import 'package:e_doc_redo/ui/widgets/display/edoc_top_nav_bar.dart';
+import 'package:e_doc_redo/ui/widgets/navigation/edoc_top_nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

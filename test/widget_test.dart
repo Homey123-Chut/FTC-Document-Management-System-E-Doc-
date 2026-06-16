@@ -1,5 +1,5 @@
 import 'package:e_doc_redo/core/theme/theme.dart';
-import 'package:e_doc_redo/ui/widgets/action/edoc_button.dart';
+import 'package:e_doc_redo/ui/widgets/buttons/edoc_button.dart';
 import 'package:flutter/material.dart';
 
 void main() {

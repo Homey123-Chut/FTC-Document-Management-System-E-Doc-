@@ -1,11 +1,11 @@
-
+﻿
 
 import 'package:e_doc_redo/core/theme/theme.dart';
 import 'package:e_doc_redo/data/models/approval_workflow/approval_step.dart';
 import 'package:e_doc_redo/ui/features/approval/controllers/level_workflow_controller.dart';
 import 'package:e_doc_redo/ui/features/approval/controllers/workflow_approval_controller.dart';
-import 'package:e_doc_redo/ui/widgets/action/edoc_button.dart';
-import 'package:e_doc_redo/ui/widgets/input/edoc_dropdown_field.dart';
+import 'package:e_doc_redo/ui/widgets/buttons/edoc_button.dart';
+import 'package:e_doc_redo/ui/widgets/inputs/edoc_dropdown_field.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -152,22 +152,36 @@ class _WorkflowStep1FormState extends State<WorkflowStep1Form> {
                     }).toList(),
                   );
                 }),
-                ButtonWidget(
-                  text: "បន្ថែម",
-                  icon: Icons.add,
-                  backgroundColor: Colors.transparent,
-                  foregroundColor: AppColors.grey,
-                  onPressed: _addStep,
+                SizedBox(
+                  height: 50,
+                  child: OutlinedButton.icon(
+                    icon: const Icon(Icons.add, size: 20, color: AppColors.grey),
+                    label: const Text('បន្ថែម',
+                        style: TextStyle(color: AppColors.blue)),
+                    onPressed: _addStep,
+                    style: OutlinedButton.styleFrom(
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(14)),
+                      side: const BorderSide(color: AppColors.grey),
+                    ),
+                  ),
                 ),
                 const SizedBox(height: 40),
                 Row(
                   children: [
                     Expanded(
-                      child: ButtonWidget(
-                        text: "បោះបង់",
-                        backgroundColor: const Color(0xFFF5F5F5),
-                        foregroundColor: Colors.black,
-                        onPressed: widget.onCancel,
+                      child: SizedBox(
+                        height: 50,
+                        child: OutlinedButton(
+                          onPressed: widget.onCancel,
+                          style: OutlinedButton.styleFrom(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(14)),
+                            side: const BorderSide(color: AppColors.grey),
+                          ),
+                          child: const Text('បោះបង់',
+                              style: TextStyle(color: AppColors.grey)),
+                        ),
                       ),
                     ),
                     const SizedBox(width: 16),

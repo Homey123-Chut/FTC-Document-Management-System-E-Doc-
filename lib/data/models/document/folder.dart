@@ -1,5 +1,5 @@
 class FolderModel {
-  final String id;
+  final int id;
   final String title;
   final int documentCount;
 
@@ -11,7 +11,7 @@ class FolderModel {
 
   factory FolderModel.fromJson(Map<String, dynamic> json) {
     return FolderModel(
-      id: json['id']?.toString() ?? '',
+      id: json['id'] ?? 0,
       title: json['title']?.toString() ?? '',
       documentCount: json['documentCount'] ?? 0,
     );
@@ -26,7 +26,7 @@ class FolderModel {
   }
 
   FolderModel copyWith({
-    String? id,
+    int? id,
     String? title,
     int? documentCount,
   }) {
