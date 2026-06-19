@@ -1,0 +1,7 @@
+[
+  {
+    "key": "ctrl+i",
+    "command": "-inlineChat.start"
+  }
+]
+

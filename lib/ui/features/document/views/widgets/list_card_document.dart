@@ -106,7 +106,7 @@ class ListCardDocument extends StatelessWidget {
                       child: Text(
                         title,
                         style: const TextStyle(
-                          fontFamily: 'KantumruyPro',
+                          fontFamily: 'Kantumruy',
                           fontSize: 14,
                           fontWeight: FontWeight.w600,
                           color: Color(0xFF1E293B),

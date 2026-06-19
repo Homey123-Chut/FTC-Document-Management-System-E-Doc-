@@ -193,7 +193,7 @@ class AppIconsSize {
 
 
 ThemeData appTheme = ThemeData(
-  fontFamily: 'KantumruyPro',
+  fontFamily: 'Kantumruy',
   scaffoldBackgroundColor: AppColors.white,
 );
 
