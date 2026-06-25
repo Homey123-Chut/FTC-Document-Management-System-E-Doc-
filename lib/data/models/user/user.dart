@@ -33,7 +33,7 @@ class UserModel {
       profileImg: json['profileImg']?.toString() ?? '',
       gender: json['gender']?.toString() ?? '',
       role: json['role']?.toString() ?? '',
-      department: json['department']?.toString() ?? '',
+      department: json['entity']?.toString() ?? json['department']?.toString() ?? '',
     );
   }
 
@@ -47,7 +47,7 @@ class UserModel {
       'profileImg': profileImg,
       'gender': gender,
       'role': role,
-      'department': department,
+      'entity': department,
     };
   }
 

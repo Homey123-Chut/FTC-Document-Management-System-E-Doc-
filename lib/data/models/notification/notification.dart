@@ -46,4 +46,24 @@ class NotificationModel {
   IconData get computedIcon {
     return isRead ? Icons.notifications_none_rounded : Icons.notifications_active_rounded;
   }
+
+  NotificationModel copyWith({
+    String? id,
+    String? title,
+    String? date,
+    String? time,
+    String? description,
+    String? categoryGroup,
+    bool? isRead,
+  }) {
+    return NotificationModel(
+      id: id ?? this.id,
+      title: title ?? this.title,
+      date: date ?? this.date,
+      time: time ?? this.time,
+      description: description ?? this.description,
+      categoryGroup: categoryGroup ?? this.categoryGroup,
+      isRead: isRead ?? this.isRead,
+    );
+  }
 }

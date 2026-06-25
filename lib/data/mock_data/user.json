@@ -8,8 +8,8 @@
       "phoneNumber": "012345678",
       "profileImg": "",
       "gender": "male",
-      "role": "admin",
-      "department": "IT Department"
+      "role": "មន្រ្តី",
+      "entity": "មជ្ឈមណ្ឌលបច្ចេកវិទ្យាហិរញ្ញវត្ថុ"
     },
     {
       "id": "2",
@@ -19,8 +19,8 @@
       "phoneNumber": "098765432",
       "profileImg": "",
       "gender": "male",
-      "role": "staff",
-      "department": "Finance"
+      "role": "មន្រ្តី",
+      "entity": "មជ្ឈមណ្ឌលបច្ចេកវិទ្យាហិរញ្ញវត្ថុ"
     },
     {
       "id": "3",
@@ -30,8 +30,8 @@
       "phoneNumber": "097123456",
       "profileImg": "",
       "gender": "female",
-      "role": "staff",
-      "department": "Finance"
+      "role": "មន្រ្តី",
+      "entity": "មជ្ឈមណ្ឌលបច្ចេកវិទ្យាហិរញ្ញវត្ថុ"
     },
     {
       "id": "4",
@@ -41,8 +41,8 @@
       "phoneNumber": "096556677",
       "profileImg": "",
       "gender": "male",
-      "role": "staff",
-      "department": "Deputy head of Office"
+      "role": "មន្រ្តី",
+      "entity": "មជ្ឈមណ្ឌលបច្ចេកវិទ្យាហិរញ្ញវត្ថុ"
     },
     {
       "id": "5",
@@ -52,8 +52,41 @@
       "phoneNumber": "095556677",
       "profileImg": "",
       "gender": "male",
-      "role": "staff",
-      "department": "Deputy head of Office"
+      "role": "មន្រ្តី",
+      "entity": "មជ្ឈមណ្ឌលបច្ចេកវិទ្យាហិរញ្ញវត្ថុ"
+    },
+    {
+      "id": "6",
+      "username": "Admin",
+      "email": "admin@gmail.com",
+      "password": "Hello@123",
+      "phoneNumber": "095556677",
+      "profileImg": "",
+      "gender": "male",
+      "role": "អ្នកគ្រប់គ្រងប្រព័ន្ធ",
+      "entity": "មជ្ឈមណ្ឌលបច្ចេកវិទ្យាហិរញ្ញវត្ថុ"
+    },
+    {
+      "id": "7",
+      "username": "Sau Sophea",
+      "email": "sophea@gmail.com",
+      "password": "Hello@123",
+      "phoneNumber": "095556677",
+      "profileImg": "",
+      "gender": "male",
+      "role": "ប្រធានការិយាល័យ",
+      "entity": "មជ្ឈមណ្ឌលបច្ចេកវិទ្យាហិរញ្ញវត្ថុ"
+    },
+    {
+      "id": "8",
+      "username": "Channa",
+      "email": "channa@gmail.com",
+      "password": "Hello@123",
+      "phoneNumber": "095556677",
+      "profileImg": "",
+      "gender": "male",
+      "role": "អនុប្រធានការិយាល័យ",
+      "entity": "មជ្ឈមណ្ឌលបច្ចេកវិទ្យាហិរញ្ញវត្ថុ"
     }
   ]
 }

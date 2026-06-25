@@ -1,14 +1,10 @@
 ﻿import 'package:e_doc_redo/core/theme/theme.dart';
-import 'package:e_doc_redo/ui/features/auth/screens/login_screen.dart';
+import 'package:e_doc_redo/ui/features/auth/views/login_screen.dart';
 import 'package:e_doc_redo/ui/features/welcome/widgets/welcome_header.dart';
 import 'package:e_doc_redo/ui/widgets/cards/edoc_method_login_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-// Forward reference — WelcomeScreen is defined in the Screen file that wraps this Content.
-// The circular import is avoided by using Get.toNamed or a direct reference to LoginScreen.
-
-/// Pure UI body of the Welcome screen.
 class WelcomeContent extends StatelessWidget {
   const WelcomeContent({super.key});
 

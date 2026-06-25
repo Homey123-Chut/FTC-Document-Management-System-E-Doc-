@@ -56,11 +56,7 @@ class TopNavBarWidget extends StatelessWidget {
               child: Text(
                 title,
                 textAlign: TextAlign.start,
-                style: const TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black87,
-                ),
+                style: AppTextStyles.title2.copyWith(fontWeight: FontWeight.bold),
                 overflow: TextOverflow.ellipsis,
               ),
             ),

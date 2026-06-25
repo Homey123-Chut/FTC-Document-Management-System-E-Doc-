@@ -41,27 +41,22 @@ Widget build(BuildContext context) {
         backgroundColor: btnBackgroundColor,
         foregroundColor: btnForegroundColor,
         elevation: 0,
-        // 1. Remove default padding so you can control it manually
         padding: EdgeInsets.symmetric(horizontal: 12), 
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(14),
-          side: borderColor != null
-              ? BorderSide(color: borderColor!)
-              : BorderSide.none,
+          side: borderColor != null ? BorderSide(color: borderColor!) : BorderSide.none,
         ),
       ),
-      child: isLoading
-          ? const CircularProgressIndicator(color: AppColors.white)
+      child: isLoading ? const CircularProgressIndicator(color: AppColors.white)
           : Row(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 if (icon != null) ...[
                   Icon(icon, size: 20),
-                  // 2. Adjust this SizedBox to be smaller (e.g., 2 or 4)
                   const SizedBox(width: 4), 
                 ],
-                Flexible( // Wrap text in Flexible to prevent overflow inside button
+                Flexible( 
                   child: Text(
                     text,
                     style: AppTextStyles.button1,

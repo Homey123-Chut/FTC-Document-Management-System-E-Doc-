@@ -1,8 +1,8 @@
 import 'package:e_doc_redo/core/theme/theme.dart';
-import 'package:e_doc_redo/ui/features/home/screens/home_screen.dart';
-import 'package:e_doc_redo/ui/features/document/views/document_screen.dart';
-import 'package:e_doc_redo/ui/features/notification/screens/notification_screen.dart';
-import 'package:e_doc_redo/ui/features/user/screens/user_screen.dart';
+import 'package:e_doc_redo/ui/features/home/views/home_screen.dart';
+import 'package:e_doc_redo/ui/features/document/document_type/views/document_screen.dart';
+import 'package:e_doc_redo/ui/features/notification/views/notification_screen.dart';
+import 'package:e_doc_redo/ui/features/user/views/user_screen.dart';
 import 'package:e_doc_redo/ui/widgets/navigation/edoc_bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 

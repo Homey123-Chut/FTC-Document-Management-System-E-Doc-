@@ -1,8 +1,6 @@
 import 'package:e_doc_redo/data/models/approval_workflow/approval_step.dart';
 import 'package:e_doc_redo/data/models/document/outgoing_document_model.dart';
 
-/// Aggregated model for the detail document screen.
-/// Combines outgoing document data with user and workflow information.
 class DetailDocumentModel {
   final OutgoingDocumentModel document;
   final String creatorName;
@@ -14,10 +12,11 @@ class DetailDocumentModel {
   final String workflowName;
   final int totalSteps;
   final String workflowDescription;
-  /// The first receiver/approver name from the workflow steps
   final String receiverName;
   final String receiverDepartment;
   final String receiverRole;
+  /// Map of successfully downloaded files: fileName → localPath.
+  final Map<String, String> downloadedFiles;
 
   const DetailDocumentModel({
     required this.document,
@@ -33,6 +32,7 @@ class DetailDocumentModel {
     required this.receiverName,
     required this.receiverDepartment,
     required this.receiverRole,
+    this.downloadedFiles = const {},
   });
 
   factory DetailDocumentModel.fromJson(Map<String, dynamic> json) {
@@ -79,6 +79,14 @@ class DetailDocumentModel {
       approvalSteps = [];
     }
 
+    final rawDownloaded = json['downloadedFiles'];
+    final Map<String, String> downloadedFiles;
+    if (rawDownloaded is Map) {
+      downloadedFiles = rawDownloaded.map((k, v) => MapEntry(k.toString(), v.toString()));
+    } else {
+      downloadedFiles = {};
+    }
+
     return DetailDocumentModel(
       document: document,
       creatorName: json['creatorName']?.toString() ?? '',
@@ -93,6 +101,7 @@ class DetailDocumentModel {
       receiverName: json['receiverName']?.toString() ?? '',
       receiverDepartment: json['receiverDepartment']?.toString() ?? '',
       receiverRole: json['receiverRole']?.toString() ?? '',
+      downloadedFiles: downloadedFiles,
     );
   }
 
@@ -111,6 +120,7 @@ class DetailDocumentModel {
       'receiverName': receiverName,
       'receiverDepartment': receiverDepartment,
       'receiverRole': receiverRole,
+      'downloadedFiles': downloadedFiles,
     };
   }
 }

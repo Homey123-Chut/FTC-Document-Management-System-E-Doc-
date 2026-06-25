@@ -1,7 +1,7 @@
 
 
-import 'package:e_doc_redo/data/models/document/total_document.dart';
+import 'package:e_doc_redo/data/models/document/document_summary.dart';
 
 abstract class TotalDocumentRepository {
-  Future<List<TotalDocumentModel>> getTotals();
+  Future<List<DocumentSummaryModel>> getTotals();
 }

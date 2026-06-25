@@ -15,4 +15,13 @@ abstract class DocumentRepository {
 
   Future<void> addDocument(DocumentModel document, String type);
   Future<void> updateDocument(DocumentModel document);
+
+  /// Returns documents that were recently created but not yet sent.
+  /// These have [DocumentStatus.draft] or [DocumentStatus.pending] status.
+  Future<List<DocumentModel>> getRecentDocuments();
+
+  /// Sends the documents with the given [ids] by changing their status
+  /// from [DocumentStatus.draft] to [DocumentStatus.sent].
+  Future<void> sendDocuments(List<int> ids);
+
 }

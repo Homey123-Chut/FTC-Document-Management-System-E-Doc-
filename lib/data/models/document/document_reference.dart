@@ -1,9 +1,8 @@
-/// Lightweight reference to a created document used in Step 1 dropdown.
 class DocumentReferenceModel {
   final int id;
   final String documentNumber;
   final String titleKhmer;
-  final String type; // personal, general, incoming
+  final String type;
 
   const DocumentReferenceModel({
     required this.id,
@@ -30,6 +29,5 @@ class DocumentReferenceModel {
     };
   }
 
-  /// Display string for the dropdown: "លេខ: 001 — ចំណងជើងឯកសារ"
   String get displayText => 'លេខ: $documentNumber — $titleKhmer';
 }

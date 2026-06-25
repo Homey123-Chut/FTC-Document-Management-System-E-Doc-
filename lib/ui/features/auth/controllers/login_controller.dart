@@ -1,8 +1,8 @@
 ﻿import 'package:e_doc_redo/core/utils/async_value.dart';
 import 'package:e_doc_redo/core/utils/validators.dart';
-import 'package:e_doc_redo/ui/features/user/repository_impl/user_repository_impl.dart';
+import 'package:e_doc_redo/ui/features/user/repositories_impl/user_repository_impl.dart';
 import 'package:e_doc_redo/data/models/user/user.dart';
-import 'package:e_doc_redo/controllers/auth_service.dart';
+import 'package:e_doc_redo/services/auth_service.dart';
 import 'package:e_doc_redo/ui/features/auth/services/login_service.dart';
 import 'package:e_doc_redo/ui/features/main/main_screen.dart';
 import 'package:flutter/material.dart';
@@ -64,6 +64,18 @@ class LoginController extends GetxController {
       );
     }
   }
+
+  /// Validates the form and triggers login if valid.
+  /// Called by the view — keeps form-key references out of the widget.
+  Future<void> submitLogin(GlobalKey<FormState> formKey) async {
+    final isValid = formKey.currentState?.validate() ?? false;
+    if (!isValid) return;
+    await handleLogin();
+  }
+
+  void togglePasswordVisibility() => hidePassword.toggle();
+
+  void setRememberMe(bool value) => rememberMe.value = value;
 
   @override
   void onClose() {

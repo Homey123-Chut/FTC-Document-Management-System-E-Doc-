@@ -16,6 +16,8 @@ class DocumentModel {
   final String? createdDate;
   final String? workflowCode;
   final String? documentFlow;
+  final String? sender;
+  final String? priority;
 
   const DocumentModel({
     required this.id,
@@ -35,6 +37,8 @@ class DocumentModel {
     this.createdDate,
     this.workflowCode,
     this.documentFlow,
+    this.sender,
+    this.priority,
   });
 
   factory DocumentModel.fromJson(Map<String, dynamic> json) {
@@ -48,7 +52,7 @@ class DocumentModel {
       subject: json['subject']?.toString() ?? '',
       program: json['program']?.toString() ?? '',
       documentHistory: json['documentHistory']?.toString() ?? '',
-      attachedFile: json['attachedFile']?.toString() ?? '',
+      attachedFile: _attachmentText(json['attachedFile']),
       folderId: json['folderId'],
       typeDocumentId: json['typeDocumentId'],
       workflowId: json['workflowId']?.toString(),
@@ -56,7 +60,16 @@ class DocumentModel {
       createdDate: json['createdDate']?.toString(),
       workflowCode: json['workflowCode']?.toString(),
       documentFlow: json['documentFlow']?.toString(),
+      sender: json['sender']?.toString(),
+      priority: json['priority']?.toString(),
     );
+  }
+
+  static String _attachmentText(dynamic value) {
+    if (value is List) {
+      return value.whereType<String>().join(', ');
+    }
+    return value?.toString() ?? '';
   }
 
   Map<String, dynamic> toJson() {
@@ -78,6 +91,8 @@ class DocumentModel {
       'createdDate': createdDate,
       'workflowCode': workflowCode,
       'documentFlow': documentFlow,
+      'sender': sender,
+      'priority': priority,
     };
   }
 
@@ -99,6 +114,8 @@ class DocumentModel {
     String? createdDate,
     String? workflowCode,
     String? documentFlow,
+    String? sender,
+    String? priority,
   }) {
     return DocumentModel(
       id: id ?? this.id,
@@ -118,6 +135,8 @@ class DocumentModel {
       createdDate: createdDate ?? this.createdDate,
       workflowCode: workflowCode ?? this.workflowCode,
       documentFlow: documentFlow ?? this.documentFlow,
+      sender: sender ?? this.sender,
+      priority: priority ?? this.priority,
     );
   }
 }

@@ -12,12 +12,12 @@
       "steps": [
         {
           "stepNumber": 1,
-          "level": "Manager",
+          "level": "មជ្ឈមណ្ឌលបច្ចេកវិទ្យាហិរញ្ញ",
           "flowLevel": "Step 1"
         },
         {
           "stepNumber": 2,
-          "level": "Director",
+          "level": "អគ្គលេខាធិការដ្ឋាន",
           "flowLevel": "Step 2"
         }
       ]
@@ -34,17 +34,17 @@
       "steps": [
         {
           "stepNumber": 1,
-          "level": "Officer",
+          "level": "មជ្ឈមណ្ឌលបច្ចេកវិទ្យាហិរញ្ញ",
           "flowLevel": "Step 1"
         },
         {
           "stepNumber": 2,
-          "level": "Manager",
+          "level": "អគ្គលេខាធិការដ្ឋាន",
           "flowLevel": "Step 2"
         },
         {
           "stepNumber": 3,
-          "level": "Director",
+          "level": "នាយកដ្ឋានប្រតិបត្តិការ",
           "flowLevel": "Step 3"
         }
       ]
@@ -61,12 +61,12 @@
       "steps": [
         {
           "stepNumber": 1,
-          "level": "Supervisor",
+          "level": "មជ្ឈមណ្ឌលបច្ចេកវិទ្យាហិរញ្ញ",
           "flowLevel": "Step 1"
         },
         {
           "stepNumber": 2,
-          "level": "HR Department",
+          "level": "អគ្គលេខាធិការដ្ឋាន",
           "flowLevel": "Step 2"
         }
       ]
@@ -83,22 +83,22 @@
       "steps": [
         {
           "stepNumber": 1,
-          "level": "Requester",
+          "level": "មជ្ឈមណ្ឌលបច្ចេកវិទ្យាហិរញ្ញ",
           "flowLevel": "Step 1"
         },
         {
           "stepNumber": 2,
-          "level": "Manager",
+          "level": "អគ្គលេខាធិការដ្ឋាន",
           "flowLevel": "Step 2"
         },
         {
           "stepNumber": 3,
-          "level": "Finance",
+          "level": "នាយកដ្ឋានប្រតិបត្តិកា",
           "flowLevel": "Step 3"
         },
         {
           "stepNumber": 4,
-          "level": "CEO",
+          "level": "និយ័តករបរធនបាលកិច្ច",
           "flowLevel": "Step 4"
         }
       ]
@@ -115,17 +115,17 @@
       "steps": [
         {
           "stepNumber": 1,
-          "level": "Analyst",
+          "level": "មជ្ឈមណ្ឌលបច្ចេកវិទ្យាហិរញ្ញ",
           "flowLevel": "Step 1"
         },
         {
           "stepNumber": 2,
-          "level": "Manager",
+          "level": "អគ្គលេខាធិការដ្ឋាន",
           "flowLevel": "Step 2"
         },
         {
           "stepNumber": 3,
-          "level": "Director",
+          "level": "នាយកដ្ឋានប្រតិបត្តិការ",
           "flowLevel": "Step 3"
         }
       ]
@@ -142,22 +142,22 @@
       "steps": [
         {
           "stepNumber": 1,
-          "level": "Legal",
+          "level": "មជ្ឈមណ្ឌលបច្ចេកវិទ្យាហិរញ្ញ",
           "flowLevel": "Step 1"
         },
         {
           "stepNumber": 2,
-          "level": "Department Head",
+          "level": "អគ្គលេខាធិការដ្ឋាន",
           "flowLevel": "Step 2"
         },
         {
           "stepNumber": 3,
-          "level": "Finance",
+          "level": "នាយកដ្ឋានប្រតិបត្តិការ",
           "flowLevel": "Step 3"
         },
         {
           "stepNumber": 4,
-          "level": "CEO",
+          "level": "និយ័តករបរធនបាលកិច្ច",
           "flowLevel": "Step 4"
         }
       ]
@@ -174,17 +174,17 @@
       "steps": [
         {
           "stepNumber": 1,
-          "level": "Accountant",
+          "level": "មជ្ឈមណ្ឌលបច្ចេកវិទ្យាហិរញ្ញ",
           "flowLevel": "Step 1"
         },
         {
           "stepNumber": 2,
-          "level": "Finance Manager",
+          "level": "អគ្គលេខាធិការដ្ឋាន",
           "flowLevel": "Step 2"
         },
         {
           "stepNumber": 3,
-          "level": "CFO",
+          "level": "នាយកដ្ឋានប្រតិបត្តិការ",
           "flowLevel": "Step 3"
         }
       ]
@@ -201,12 +201,12 @@
       "steps": [
         {
           "stepNumber": 1,
-          "level": "Technician",
+          "level": "មជ្ឈមណ្ឌលបច្ចេកវិទ្យាហិរញ្ញ",
           "flowLevel": "Step 1"
         },
         {
           "stepNumber": 2,
-          "level": "QC Manager",
+          "level": "អគ្គលេខាធិការដ្ឋាន",
           "flowLevel": "Step 2"
         }
       ]
@@ -223,17 +223,17 @@
       "steps": [
         {
           "stepNumber": 1,
-          "level": "Employee",
+          "level": "មជ្ឈមណ្ឌលបច្ចេកវិទ្យាហិរញ្ញ",
           "flowLevel": "Step 1"
         },
         {
           "stepNumber": 2,
-          "level": "IT Manager",
+          "level": "អគ្គលេខាធិការដ្ឋាន",
           "flowLevel": "Step 2"
         },
         {
           "stepNumber": 3,
-          "level": "Operations",
+          "level": "នាយកដ្ឋានប្រតិបត្តិការ",
           "flowLevel": "Step 3"
         }
       ]
@@ -250,22 +250,22 @@
       "steps": [
         {
           "stepNumber": 1,
-          "level": "Content Creator",
+          "level": "មជ្ឈមណ្ឌលបច្ចេកវិទ្យាហិរញ្ញ",
           "flowLevel": "Step 1"
         },
         {
           "stepNumber": 2,
-          "level": "Social Media Lead",
+          "level": "និយ័តករបរធនបាលកិច្ច",
           "flowLevel": "Step 2"
         },
         {
           "stepNumber": 3,
-          "level": "Marketing Manager",
+          "level": "និយ័តករធានារ៉ាប់រងកម្ពុជា",
           "flowLevel": "Step 3"
         },
         {
           "stepNumber": 4,
-          "level": "Director",
+          "level": "និយ័តករធានារ៉ាប់រងកម្ពុជា",
           "flowLevel": "Step 4"
         }
       ]
@@ -282,12 +282,12 @@
       "steps": [
         {
           "stepNumber": 1,
-          "level": "Admin Officer",
+          "level": "មជ្ឈមណ្ឌលបច្ចេកវិទ្យាហិរញ្ញ",
           "flowLevel": "Step 1"
         },
         {
           "stepNumber": 2,
-          "level": "Admin Manager",
+          "level": "និយ័តករធានារ៉ាប់រងកម្ពុជា",
           "flowLevel": "Step 2"
         }
       ]
@@ -304,17 +304,17 @@
       "steps": [
         {
           "stepNumber": 1,
-          "level": "Developer",
+          "level": "មជ្ឈមណ្ឌលបច្ចេកវិទ្យាហិរញ្ញ",
           "flowLevel": "Step 1"
         },
         {
           "stepNumber": 2,
-          "level": "Tech Lead",
+          "level": "អគ្គលេខាធិការដ្ឋាន",
           "flowLevel": "Step 2"
         },
         {
           "stepNumber": 3,
-          "level": "CTO",
+          "level": "នាយកដ្ឋានប្រតិបត្តិការ",
           "flowLevel": "Step 3"
         }
       ]

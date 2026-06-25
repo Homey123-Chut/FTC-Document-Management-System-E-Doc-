@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../core/theme/theme.dart';
 
 class TextFieldWidget extends StatelessWidget {
- 
+
   final String label;
   final String? hintText;
   final TextEditingController controller;
@@ -13,6 +13,8 @@ class TextFieldWidget extends StatelessWidget {
   final Widget? suffixIcon;
   final TextInputAction? textInputAction;
   final bool isRequired;
+  final TextStyle? textStyle;
+  final TextStyle? labelStyle;
 
   const TextFieldWidget({
     super.key,
@@ -24,7 +26,9 @@ class TextFieldWidget extends StatelessWidget {
     this.obscureText = false,
     this.suffixIcon,
     this.textInputAction,
-    this.isRequired = true, 
+    this.isRequired = true,
+    this.textStyle,
+    this.labelStyle,
   });
 
   @override
@@ -35,10 +39,10 @@ class TextFieldWidget extends StatelessWidget {
         RichText(
           text: TextSpan(
             text: label,
-            style: AppTextStyles.subtitle3, 
+            style: labelStyle ?? AppTextStyles.subtitle3,
             children: [
               if (isRequired)
-                const TextSpan(
+                TextSpan(
                   text: ' * ',
                   style: AppTextStyles.statusRejected,
                 ),
@@ -52,7 +56,7 @@ class TextFieldWidget extends StatelessWidget {
           keyboardType: keyboardType,
           obscureText: obscureText,
           textInputAction: textInputAction,
-          style: AppTextStyles.body1, 
+          style: textStyle ?? AppTextStyles.body1,
           
           validator: validator ?? (value) {
             if (isRequired && (value == null || value.trim().isEmpty)) {

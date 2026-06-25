@@ -58,8 +58,7 @@ class BottomNavBarWidget extends StatelessWidget {
             const SizedBox(height: 4),
             Text(
               label,
-              style: TextStyle(
-                fontSize: 14,
+              style: AppTextStyles.navText2.copyWith(
                 color: color,
                 fontWeight: isSelected ? FontWeight.w700 : FontWeight.w500,
               ),

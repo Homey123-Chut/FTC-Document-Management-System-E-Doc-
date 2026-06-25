@@ -8,26 +8,28 @@
     "date": "១ ឧសភា ២០២៦",
     "subject": "របាយការណ៍លទ្ធផលនៃកិច្ចប្រជុំជាមួយជំនាញការក្នុងក្របខណ្ឌជំនួយបច្ចេកទេស",
     "program": "កម្មវិធីសាកល្បង",
-    "attachedFile": "file_31.pdf",
+    "attachedFile": [
+      "outgoing_letter.pdf"
+    ],
     "workflowTemplateId": "WF002",
     "workflowTemplateName": "លំហូរឯកសារចេញ",
     "totalSteps": 3,
     "workflowSteps": [
       {
         "stepNumber": 1,
-        "level": "Officer",
+        "level": "មជ្ឈមណ្ឌលបច្ចេកវិទ្យាហិរញ្ញ",
         "flowLevel": "Step 1",
         "status": "pending"
       },
       {
         "stepNumber": 2,
-        "level": "Manager",
+        "level": "អគ្គលេខាធិការដ្ឋាន",
         "flowLevel": "Step 2",
         "status": "pending"
       },
       {
         "stepNumber": 3,
-        "level": "Director",
+        "level": "នាយកដ្ឋានប្រតិបត្តិការ",
         "flowLevel": "Step 3",
         "status": "pending"
       }
@@ -45,26 +47,29 @@
     "date": "១ ឧសភា ២០២៦",
     "subject": "របាយការណ៍លទ្ធផលនៃកិច្ចប្រជុំជាមួយជំនាញការក្នុងក្របខណ្ឌជំនួយបច្ចេកទេស",
     "program": "កម្មវិធីសាកល្បង",
-    "attachedFile": "file_32.pdf",
+    "attachedFile": [
+      "outgoing_memo.pdf",
+      "recipient_list.xlsx"
+    ],
     "workflowTemplateId": "WF002",
     "workflowTemplateName": "លំហូរឯកសារចេញ",
     "totalSteps": 3,
     "workflowSteps": [
       {
         "stepNumber": 1,
-        "level": "Officer",
+        "level": "មជ្ឈមណ្ឌលបច្ចេកវិទ្យាហិរញ្ញ",
         "flowLevel": "Step 1",
         "status": "pending"
       },
       {
         "stepNumber": 2,
-        "level": "Manager",
+        "level": "អគ្គលេខាធិការដ្ឋាន",
         "flowLevel": "Step 2",
         "status": "pending"
       },
       {
         "stepNumber": 3,
-        "level": "Director",
+        "level": "នាយកដ្ឋានប្រតិបត្តិការ",
         "flowLevel": "Step 3",
         "status": "pending"
       }
@@ -82,26 +87,30 @@
     "date": "១ ឧសភា ២០២៦",
     "subject": "របាយការណ៍លទ្ធផលនៃកិច្ចប្រជុំជាមួយជំនាញការក្នុងក្របខណ្ឌជំនួយបច្ចេកទេស",
     "program": "កម្មវិធីសាកល្បង",
-    "attachedFile": "file_33.pdf",
+    "attachedFile": [
+      "technical_response.pdf",
+      "annex_b.docx",
+      "diagram.png"
+    ],
     "workflowTemplateId": "WF002",
     "workflowTemplateName": "លំហូរឯកសារចេញ",
     "totalSteps": 3,
     "workflowSteps": [
       {
         "stepNumber": 1,
-        "level": "Officer",
+        "level": "មជ្ឈមណ្ឌលបច្ចេកវិទ្យាហិរញ្ញ",
         "flowLevel": "Step 1",
         "status": "pending"
       },
       {
         "stepNumber": 2,
-        "level": "Manager",
+        "level": "អគ្គលេខាធិការដ្ឋាន",
         "flowLevel": "Step 2",
         "status": "pending"
       },
       {
         "stepNumber": 3,
-        "level": "Director",
+        "level": "នាយកដ្ឋានប្រតិបត្តិការ",
         "flowLevel": "Step 3",
         "status": "pending"
       }
@@ -119,32 +128,35 @@
     "date": "១ ឧសភា ២០២៦",
     "subject": "របាយការណ៍លទ្ធផលនៃកិច្ចប្រជុំជាមួយជំនាញការក្នុងក្របខណ្ឌជំនួយបច្ចេកទេស",
     "program": "កម្មវិធីសាកល្បង",
-    "attachedFile": "file_34.pdf",
+    "attachedFile": [
+      "signed_contract.pdf",
+      "implementation_plan.docx"
+    ],
     "workflowTemplateId": "WF006",
     "workflowTemplateName": "លំហូរចុះហត្ថលេខាលើកិច្ចសន្យា",
     "totalSteps": 4,
     "workflowSteps": [
       {
         "stepNumber": 1,
-        "level": "Legal",
+        "level": "និយ័តករបរធនបាលកិច្ច",
         "flowLevel": "Step 1",
         "status": "pending"
       },
       {
         "stepNumber": 2,
-        "level": "Department Head",
+        "level": "អគ្គលេខាធិការដ្ឋាន",
         "flowLevel": "Step 2",
         "status": "pending"
       },
       {
         "stepNumber": 3,
-        "level": "Finance",
+        "level": "នាយកដ្ឋានប្រតិបត្តិការ",
         "flowLevel": "Step 3",
         "status": "pending"
       },
       {
         "stepNumber": 4,
-        "level": "CEO",
+        "level": "និយ័តករបរធនបាលកិច្ច",
         "flowLevel": "Step 4",
         "status": "pending"
       }
@@ -162,32 +174,34 @@
     "date": "១ ឧសភា ២០២៦",
     "subject": "របាយការណ៍លទ្ធផលនៃកិច្ចប្រជុំជាមួយជំនាញការក្នុងក្របខណ្ឌជំនួយបច្ចេកទេស",
     "program": "កម្មវិធីសាកល្បង",
-    "attachedFile": "file_35.pdf",
+    "attachedFile": [
+      "signed_contract.pdf"
+    ],
     "workflowTemplateId": "WF006",
     "workflowTemplateName": "លំហូរចុះហត្ថលេខាលើកិច្ចសន្យា",
     "totalSteps": 4,
     "workflowSteps": [
       {
         "stepNumber": 1,
-        "level": "Legal",
+        "level": "និយ័តករបរធនបាលកិច្ច",
         "flowLevel": "Step 1",
         "status": "approved"
       },
       {
         "stepNumber": 2,
-        "level": "Department Head",
+        "level": "អគ្គលេខាធិការដ្ឋាន",
         "flowLevel": "Step 2",
         "status": "approved"
       },
       {
         "stepNumber": 3,
-        "level": "Finance",
+        "level": "នាយកដ្ឋានប្រតិបត្តិការ",
         "flowLevel": "Step 3",
         "status": "approved"
       },
       {
         "stepNumber": 4,
-        "level": "CEO",
+        "level": "និយ័តករធានារ៉ាប់រងកម្ពុជា",
         "flowLevel": "Step 4",
         "status": "approved"
       }
@@ -205,32 +219,35 @@
     "date": "១ ឧសភា ២០២៦",
     "subject": "របាយការណ៍លទ្ធផលនៃកិច្ចប្រជុំជាមួយជំនាញការក្នុងក្របខណ្ឌជំនួយបច្ចេកទេស",
     "program": "កម្មវិធីសាកល្បង",
-    "attachedFile": "file_36.pdf",
+    "attachedFile": [
+      "approval_notice.pdf",
+      "implementation_plan.docx"
+    ],
     "workflowTemplateId": "WF006",
     "workflowTemplateName": "លំហូរចុះហត្ថលេខាលើកិច្ចសន្យា",
     "totalSteps": 4,
     "workflowSteps": [
       {
         "stepNumber": 1,
-        "level": "Legal",
+        "level": "និយ័តករបរធនបាលកិច្ច",
         "flowLevel": "Step 1",
         "status": "approved"
       },
       {
         "stepNumber": 2,
-        "level": "Department Head",
+        "level": "អគ្គលេខាធិការដ្ឋាន",
         "flowLevel": "Step 2",
         "status": "approved"
       },
       {
         "stepNumber": 3,
-        "level": "Finance",
+        "level": "នាយកដ្ឋានប្រតិបត្តិការ",
         "flowLevel": "Step 3",
         "status": "approved"
       },
       {
         "stepNumber": 4,
-        "level": "CEO",
+        "level": "និយ័តករធានារ៉ាប់រងកម្ពុជា",
         "flowLevel": "Step 4",
         "status": "approved"
       }
@@ -248,26 +265,30 @@
     "date": "១ ឧសភា ២០២៦",
     "subject": "របាយការណ៍លទ្ធផលនៃកិច្ចប្រជុំជាមួយជំនាញការក្នុងក្របខណ្ឌជំនួយបច្ចេកទេស",
     "program": "កម្មវិធីសាកល្បង",
-    "attachedFile": "file_37.pdf",
+    "attachedFile": [
+      "monthly_outgoing_report.pdf",
+      "data_table.xlsx",
+      "cover_image.png"
+    ],
     "workflowTemplateId": "WF005",
     "workflowTemplateName": "លំហូររាយការណ៍ប្រចាំខែ",
     "totalSteps": 3,
     "workflowSteps": [
       {
         "stepNumber": 1,
-        "level": "Analyst",
+        "level": "និយ័តករធានារ៉ាប់រងកម្ពុជា",
         "flowLevel": "Step 1",
         "status": "approved"
       },
       {
         "stepNumber": 2,
-        "level": "Manager",
+        "level": "អគ្គលេខាធិការដ្ឋាន",
         "flowLevel": "Step 2",
         "status": "approved"
       },
       {
         "stepNumber": 3,
-        "level": "Director",
+        "level": "នាយកដ្ឋានប្រតិបត្តិការ",
         "flowLevel": "Step 3",
         "status": "approved"
       }
@@ -285,26 +306,26 @@
     "date": "១ ឧសភា ២០២៦",
     "subject": "របាយការណ៍លទ្ធផលនៃកិច្ចប្រជុំជាមួយជំនាញការក្នុងក្របខណ្ឌជំនួយបច្ចេកទេស",
     "program": "កម្មវិធីសាកល្បង",
-    "attachedFile": "file_38.pdf",
+    "attachedFile": [],
     "workflowTemplateId": "WF005",
     "workflowTemplateName": "លំហូររាយការណ៍ប្រចាំខែ",
     "totalSteps": 3,
     "workflowSteps": [
       {
         "stepNumber": 1,
-        "level": "Analyst",
+        "level": "និយ័តករធានារ៉ាប់រងកម្ពុជា",
         "flowLevel": "Step 1",
         "status": "approved"
       },
       {
         "stepNumber": 2,
-        "level": "Manager",
+        "level": "អគ្គលេខាធិការដ្ឋាន",
         "flowLevel": "Step 2",
         "status": "approved"
       },
       {
         "stepNumber": 3,
-        "level": "Director",
+        "level": "នាយកដ្ឋានប្រតិបត្តិការ",
         "flowLevel": "Step 3",
         "status": "approved"
       }
@@ -322,32 +343,34 @@
     "date": "១ ឧសភា ២០២៦",
     "subject": "របាយការណ៍លទ្ធផលនៃកិច្ចប្រជុំជាមួយជំនាញការក្នុងក្របខណ្ឌជំនួយបច្ចេកទេស",
     "program": "កម្មវិធីសាកល្បង",
-    "attachedFile": "file_39.pdf",
+    "attachedFile": [
+      "rejection_response.pdf"
+    ],
     "workflowTemplateId": "WF004",
     "workflowTemplateName": "លំហូរការបញ្ជាទិញ",
     "totalSteps": 4,
     "workflowSteps": [
       {
         "stepNumber": 1,
-        "level": "Requester",
+        "level": "និយ័តករបរធនបាលកិច្ច",
         "flowLevel": "Step 1",
         "status": "approved"
       },
       {
         "stepNumber": 2,
-        "level": "Manager",
+        "level": "អគ្គលេខាធិការដ្ឋាន",
         "flowLevel": "Step 2",
         "status": "rejected"
       },
       {
         "stepNumber": 3,
-        "level": "Finance",
+        "level": "នាយកដ្ឋានប្រតិបត្តិការ",
         "flowLevel": "Step 3",
         "status": "pending"
       },
       {
         "stepNumber": 4,
-        "level": "CEO",
+        "level": "និយ័តករធានារ៉ាប់រងកម្ពុជា",
         "flowLevel": "Step 4",
         "status": "pending"
       }
@@ -365,32 +388,35 @@
     "date": "១ ឧសភា ២០២៦",
     "subject": "របាយការណ៍លទ្ធផលនៃកិច្ចប្រជុំជាមួយជំនាញការក្នុងក្របខណ្ឌជំនួយបច្ចេកទេស",
     "program": "កម្មវិធីសាកល្បង",
-    "attachedFile": "file_40.pdf",
+    "attachedFile": [
+      "corrected_outgoing_doc.docx",
+      "final_outgoing_letter.pdf"
+    ],
     "workflowTemplateId": "WF004",
     "workflowTemplateName": "លំហូរការបញ្ជាទិញ",
     "totalSteps": 4,
     "workflowSteps": [
       {
         "stepNumber": 1,
-        "level": "Requester",
+        "level": "និយ័តករបរធនបាលកិច្ច",
         "flowLevel": "Step 1",
         "status": "approved"
       },
       {
         "stepNumber": 2,
-        "level": "Manager",
+        "level": "អគ្គលេខាធិការដ្ឋាន",
         "flowLevel": "Step 2",
         "status": "rejected"
       },
       {
         "stepNumber": 3,
-        "level": "Finance",
+        "level": "នាយកដ្ឋានប្រតិបត្តិការ",
         "flowLevel": "Step 3",
         "status": "pending"
       },
       {
         "stepNumber": 4,
-        "level": "CEO",
+        "level": "និយ័តករធានារ៉ាប់រងកម្ពុជា",
         "flowLevel": "Step 4",
         "status": "pending"
       }

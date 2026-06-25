@@ -68,13 +68,12 @@ flutter:
     - assets/ 
     - lib/data/mock_data/user.json
     - lib/data/mock_data/documents.json
-    - lib/data/mock_data/total_documents.json
-    - lib/data/mock_data/type_documents.json
     - lib/data/mock_data/notifications.json
     - lib/data/mock_data/folders.json
     - lib/data/mock_data/approval_workflow.json 
     - lib/data/mock_data/level_workflow.json
     - lib/data/mock_data/outgoing_documents.json
+    - lib/data/mock_data/type_documents.json
 
   # To add assets to your application, add an assets section, like this:
   # assets:
@@ -87,6 +86,4 @@ flutter:
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/to/asset-from-package
 
-  fonts:
-    - family: Kantumruy
-      
+  

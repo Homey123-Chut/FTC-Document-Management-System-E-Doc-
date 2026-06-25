@@ -1,7 +1,4 @@
 import 'package:e_doc_redo/data/models/approval_workflow/approval_step.dart';
-
-/// Model for a sent/outgoing document that references a source document
-/// and a selected workflow template with its approval steps.
 class OutgoingDocumentModel {
   final int id;
   final int sourceDocumentId;
@@ -60,15 +57,24 @@ class OutgoingDocumentModel {
       date: json['date']?.toString() ?? '',
       subject: json['subject']?.toString() ?? '',
       program: json['program']?.toString() ?? '',
-      attachedFile: json['attachedFile']?.toString() ?? '',
+      attachedFile: _attachmentText(json['attachedFile']),
       workflowTemplateId: json['workflowTemplateId']?.toString() ?? '',
       workflowTemplateName: json['workflowTemplateName']?.toString() ?? '',
       totalSteps: json['totalSteps'] ?? 0,
       workflowSteps: steps,
-      status: json['status']?.toString() ?? '',
+      status: json['status']?.toString().isEmpty == false
+          ? json['status']!.toString()
+          : 'កំពុងរង់ចាំ',
       createdAt: json['createdAt']?.toString() ?? '',
       createdBy: json['createdBy']?.toString() ?? '',
     );
+  }
+
+  static String _attachmentText(dynamic value) {
+    if (value is List) {
+      return value.whereType<String>().join(', ');
+    }
+    return value?.toString() ?? '';
   }
 
   static Map<String, dynamic> _toStringKeyMap(Map map) {

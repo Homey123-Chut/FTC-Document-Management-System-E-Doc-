@@ -5,6 +5,8 @@ abstract class UserRepository {
 
   Future<UserModel?> getUserById(String id);
 
+  Future<List<UserModel>> fetchAllUsers();
+
   Future<UserModel?> updateUser(UserModel user);
 
   Future<bool> changePassword(
@@ -12,4 +14,9 @@ abstract class UserRepository {
     String oldPassword,
     String newPassword,
   );
+
+  /// Uploads a profile image for the given user.
+  /// [filePath] is the absolute path to the image file on the device.
+  /// Returns the new profile image path/URL on success, or null on failure.
+  Future<String?> uploadProfileImage(String userId, String filePath);
 }

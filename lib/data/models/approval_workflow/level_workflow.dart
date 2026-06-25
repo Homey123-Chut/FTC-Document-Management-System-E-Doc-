@@ -14,7 +14,6 @@ class LevelWorkflowModel {
     );
   }
 
-  /// Backward-compatible factory for simple string values.
   factory LevelWorkflowModel.fromString(String name) {
     return LevelWorkflowModel(name: name);
   }

@@ -1,16 +1,16 @@
-import 'package:e_doc_redo/controllers/auth_service.dart';
+import 'package:e_doc_redo/services/auth_service.dart';
 import 'package:e_doc_redo/core/theme/theme.dart';
+import 'package:e_doc_redo/ui/features/main/main_screen.dart';
 import 'package:e_doc_redo/ui/features/notification/controllers/notification_controller.dart';
 import 'package:e_doc_redo/ui/features/user/controllers/profile_controller.dart';
-import 'package:e_doc_redo/ui/features/welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:device_preview/device_preview.dart';
 
 void main() {
   Get.put(AuthService(), permanent: true);
-  Get.lazyPut(() => ProfileController());
-  Get.lazyPut(() => NotificationController());
+  Get.lazyPut(() => ProfileController(), fenix: true);
+  Get.lazyPut(() => NotificationController(), fenix: true);
   runApp(
     DevicePreview(
       enabled: true,
@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
       title: 'E-Doc',
       debugShowCheckedModeBanner: false,
       theme: appTheme,
-      home: const WelcomeScreen(),
+      home: const MainScreen(),
     );
   }
 }

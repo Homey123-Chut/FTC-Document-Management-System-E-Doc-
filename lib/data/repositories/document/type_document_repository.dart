@@ -1,5 +1,5 @@
-import 'package:e_doc_redo/data/models/document/type_document.dart';
+import 'package:e_doc_redo/data/models/document/document_summary.dart';
 
 abstract class TypeDocumentRepository {
-  Future<List<TypeDocumentModel>> getTypes();
+  Future<List<DocumentSummaryModel>> getTypes();
 }

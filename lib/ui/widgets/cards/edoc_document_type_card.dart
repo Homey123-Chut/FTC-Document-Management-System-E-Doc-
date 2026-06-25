@@ -59,7 +59,7 @@ class EdocDocumentTypeCard extends StatelessWidget {
             const SizedBox(height: 4),
             Row(
               children: [
-                Text('$count', style: AppTextStyles.subtitle1),
+                Text('$count', style: AppTextStyles.subtitle2),
                 const SizedBox(width: 8),
                 const Text(
                   'ឯកសារ',

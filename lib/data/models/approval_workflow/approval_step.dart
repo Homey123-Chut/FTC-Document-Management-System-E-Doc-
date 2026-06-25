@@ -1,4 +1,4 @@
-import 'package:e_doc_redo/data/models/document/document_type.dart';
+import 'package:e_doc_redo/core/utils/document_type_extension.dart';
 
 class ApprovalStepModel {
   final int stepNumber;

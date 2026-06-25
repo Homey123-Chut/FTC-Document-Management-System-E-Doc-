@@ -34,8 +34,7 @@ class DatePicker extends StatelessWidget {
       },
     );
     if (picked != null) {
-      // Formats as Day / Month / Year
-      controller.text = DateFormat('d / M / yyyy').format(picked);
+      controller.text = DateFormat('dd/MM/yyyy').format(picked);
     }
   }
 

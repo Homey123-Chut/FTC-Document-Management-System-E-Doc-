@@ -9,4 +9,13 @@ class NotificationService {
   Future<List<NotificationModel>> getNotifications() {
     return _repository.fetchNotifications();
   }
+
+  Future<List<NotificationModel>> searchNotifications(String query) async {
+    final all = await _repository.fetchNotifications();
+    final q = query.toLowerCase();
+    return all.where((n) {
+      return n.title.toLowerCase().contains(q) ||
+          n.description.toLowerCase().contains(q);
+    }).toList();
+  }
 }
